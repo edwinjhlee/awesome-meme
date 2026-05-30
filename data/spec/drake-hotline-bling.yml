@@ -1,8 +1,11 @@
 id: drake-hotline-bling
 image_size: [1400, 1400]
 urls:
+  - src: imgflip
+    url: https://i.imgflip.com/30b1gx.jpg
   - src: wikipedia
     url: https://upload.wikimedia.org/wikipedia/commons/c/c9/Drake_-_Hotline_Bling.png
+    note: "This is the album cover, not the two-panel meme template. Use imgflip."
 font:
   family: Impact
   size: 64
