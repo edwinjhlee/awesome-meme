@@ -9,9 +9,10 @@ awesome-meme is a pure-data meme template repository. It stores YAML metadata (n
 ```
 awesome-meme/
 ├── AGENTS.md                   # This file — agent instructions
-├── meme_index.yml              # Master index of all memes
-├── templates/                  # Per-meme YAML with layouts, slots, coords
-│   └── distracted_boyfriend.yml
+├── data/                       # Meme data (downloaded by skill at runtime)
+│   ├── meme_index.yml          # Master index of all memes
+│   └── spec/                   # Per-meme render specs (layouts, slots, coords)
+│       └── distracted_boyfriend.yml
 ├── skill/                      # Self-contained renderer (stable, no data)
 │   ├── SKILL.md                # Entry point — usage, download, docs
 │   ├── meme_render.py          # Python renderer (Pillow + ImageMagick)
@@ -27,13 +28,13 @@ awesome-meme/
 
 - **skill/ is stable** — renderer code changes rarely; template data updates independently
 - **No images in repo** — only YAML metadata + URLs pointing to external image sources
-- **Data lives in root** — meme_index.yml and templates/ are data the skill fetches at runtime
+- **Data lives in data/** — meme_index.yml and spec/ are data the skill fetches at runtime
 - **Docs in skill/** — all skill documentation stays inside skill/, split by topic
 
 ## When Adding a New Meme
 
-1. Add entry to `meme_index.yml` with metadata, triggers, safety level, URLs
-2. Create `templates/<meme_id>.yml` with layouts, slots, positions, font config
+1. Add entry to `data/meme_index.yml` with metadata, triggers, safety level, URLs
+2. Create `data/spec/<meme_id>.yml` with layouts, slots, positions, font config
 3. Test with `python3 skill/meme_render.py <meme-id> TEXT1 TEXT2`
 
 ## When Modifying the Skill

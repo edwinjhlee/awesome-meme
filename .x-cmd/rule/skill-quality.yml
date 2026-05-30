@@ -8,11 +8,11 @@ skill-no-data-in-skill:
   desc:
   - The skill/ directory must only contain renderer code and documentation.
   - Never put meme_index.yml, template YAML, or image files inside skill/.
-  - Template data lives in the repo root (meme_index.yml, templates/).
+  - Data lives in data/ (meme_index.yml, data/spec/).
   - The skill fetches data from GitHub at runtime via meme ID.
   tldr:
-  - wrong: "skill/templates/distracted_boyfriend.yml or skill/meme_index.yml"
-    right: "templates/distracted_boyfriend.yml and meme_index.yml in repo root"
+  - wrong: "skill/data/ or data inside skill/"
+    right: "data/spec/ and data/meme_index.yml in repo root"
 
 skill-docs-split:
   name: Documentation split by topic, SKILL.md is entry point
@@ -48,7 +48,7 @@ skill-meme-id-fetch:
   - meme_render.py must accept a meme ID (e.g. distracted-boyfriend) as the first argument.
   - When given a meme ID (not a file path), it fetches the template YAML from GitHub.
   - When given a local file path, it reads directly.
-  - The GitHub raw URL pattern: https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/templates/{id}.yml
+  - The GitHub raw URL pattern: https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/spec/{id}.yml
   tldr:
   - wrong: "Only accepts local file paths"
     right: "python3 meme_render.py distracted-boyfriend TEXT1 TEXT2 works without local template"

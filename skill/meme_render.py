@@ -21,8 +21,8 @@ def _resolve_template(template_arg):
             return yaml.safe_load(f)
     # Treat as meme ID, download from GitHub
     meme_id = template_arg.replace("_", "-")
-    url = f"{GITHUB_RAW}/templates/{meme_id}.yml"
-    print(f"Downloading template: {url}")
+    url = f"{GITHUB_RAW}/data/spec/{meme_id}.yml"
+    print(f"Downloading spec: {url}")
     r = subprocess.run(["curl", "-sL", url], capture_output=True, text=True, timeout=10)
     if r.returncode != 0 or not r.stdout.strip():
         print(f"Error: template '{meme_id}' not found", file=sys.stderr)

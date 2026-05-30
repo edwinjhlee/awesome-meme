@@ -73,7 +73,7 @@ bash meme_render.sh distracted_boyfriend.yml "ZIG" "ME" "RUST"
 ## How It Works
 
 1. Skill (this directory) = renderer code only, stable
-2. Template data = YAML files in [awesome-meme/templates/](https://github.com/edwinjhlee/awesome-meme/tree/main/templates), updated independently
+2. Template data = YAML files in [awesome-meme/data/](https://github.com/edwinjhlee/awesome-meme/tree/main/data), updated independently
 3. When you use a meme ID (e.g. `distracted-boyfriend`), the renderer fetches the template from GitHub automatically
 
 ## Docs
