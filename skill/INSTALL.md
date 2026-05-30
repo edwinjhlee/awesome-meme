@@ -1,5 +1,17 @@
 # Install Dependencies
 
+## x-cmd (optional)
+
+[x-cmd](https://www.x-cmd.com) provides portable package management without sudo.
+
+Install:
+
+```bash
+eval "$(curl https://get.x-cmd.com)"
+```
+
+See [x-cmd.com/llms.txt](https://www.x-cmd.com/llms.txt) for details.
+
 ## Pillow (Python)
 
 ```bash
