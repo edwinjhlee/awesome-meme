@@ -1,4 +1,4 @@
-name: Sync to Gitee
+name: Sync to Gitee & Codeberg
 on:
   push:
     branches: [main]
@@ -12,9 +12,14 @@ jobs:
           fetch-depth: 0
       - uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.GITEE_SSH_KEY }}
+          ssh-private-key: |
+            ${{ secrets.GITEE_SSH_KEY }}
+            ${{ secrets.CODEBERG_SSH_KEY }}
       - run: |
           mkdir -p ~/.ssh
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+          ssh-keyscan codeberg.org >> ~/.ssh/known_hosts
           git remote add gitee git@gitee.com:edwinjhlee/awesome-meme.git
+          git remote add codeberg git@codeberg.org:edwinjhlee/awesome-meme.git
           git push gitee main --force
+          git push codeberg main --force
