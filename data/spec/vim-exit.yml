@@ -24,4 +24,4 @@ layouts:
         role_zh: "点睛/答案"
         pos: [367, 375]
 example:
-  texts: ["How to exit Vim?", ":q! and pray"]
+  texts: ["TRIED TO EXIT VIM", "NOW IN DEEPER MODE"]

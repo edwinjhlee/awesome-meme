@@ -24,4 +24,4 @@ layouts:
         role_zh: "困惑/无辜的一方"
         pos: [223, 200]
 example:
-  texts: ["Junior explaining the bug", "Senior's code that caused it"]
+  texts: ["ME EXPLAINING TO BUG", "THE BUG:"]

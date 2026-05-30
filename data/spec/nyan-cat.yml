@@ -24,4 +24,4 @@ layouts:
         role_zh: "点睛"
         pos: [125, 225]
 example:
-  texts: ["Code works on Friday", "Nyan nyan nyan"]
+  texts: ["DEPLOYED ON FRIDAY", "EVERYTHING IS FINE"]

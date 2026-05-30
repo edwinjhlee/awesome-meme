@@ -24,4 +24,4 @@ layouts:
         role_zh: "点睛/讽刺结论"
         pos: [210, 215]
 example:
-  texts: ["Can't have bugs", "If you don't write tests"]
+  texts: ["CAN'T HAVE DEADLINES", "IF YOU DON'T HAVE DATES"]

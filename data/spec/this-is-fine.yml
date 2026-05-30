@@ -26,4 +26,4 @@ layouts:
         role_zh: "点睛/否认"
         pos: [140, 118]
 example:
-  texts: ["Production is on fire", "This is fine"]
+  texts: ["ERROR LOG", "THIS IS FINE"]

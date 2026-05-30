@@ -26,4 +26,4 @@ layouts:
         role_zh: "点睛/胜利"
         pos: [194, 225]
 example:
-  texts: ["Code compiles", "First try"]
+  texts: ["ACCIDENTALLY", "WROTE GOOD CODE"]

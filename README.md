@@ -21,13 +21,30 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 ## Quick Start
 
 ```bash
-# Install
+# 1. Get the skill
+curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
+
+# 2. Install dependencies
 pip install pillow pyyaml
 
-# Generate a meme by ID (auto-downloads spec + image)
-python3 meme_render.py drake-hotline-bling "Debugging with print" "Debugging with debugger"
+# 3. Generate a meme (auto-downloads spec + image from GitHub)
+python3 meme_render.py this-is-fine "ERROR LOG" "THIS IS FINE"
+```
 
-# List available memes
+Or with x-cmd:
+
+```bash
+# Install x-cmd (see https://www.x-cmd.com/llms.txt)
+eval "$(curl https://get.x-cmd.com)"
+x env use python
+pip install pillow pyyaml
+```
+
+See [skill/SKILL.md](skill/SKILL.md) for full docs.
+
+## List available memes
+
+```bash
 grep 'id:' data/meme_index.yml
 ```
 
