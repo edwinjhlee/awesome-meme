@@ -1,0 +1,22 @@
+id: lenny-face
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "ASCII art mischievous face"
+    slots:
+      - id: text
+        role: "mischievous message"
+        role_zh: "贼笑"
+        pos: [200, 50]
+example:
+  texts: ["( ͡° ͜ʖ ͡°)"]
+render_hint: text-only

@@ -1,0 +1,22 @@
+id: look-of-disapproval
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "ASCII art disapproval"
+    slots:
+      - id: text
+        role: "disapproval message"
+        role_zh: "不赞同"
+        pos: [200, 50]
+example:
+  texts: ["ಠ_ಠ"]
+render_hint: text-only

@@ -1,0 +1,33 @@
+# P2 Meme Index — Celebrity/media content (≤20% of total)
+# Use with caution, may have copyright concerns
+
+memes:
+  - id: zhenxiang
+    name: Zhen Xiang
+    name_zh: 真香
+    lang: zh
+    category: general
+    meaning: Strongly rejected at first, gladly accepted later
+    meaning_zh: 事前坚决拒绝，事后欣然接受，自我打脸
+    triggers_en:
+    triggers_zh: 真香|打脸|刚开始拒绝|后来接受|还是用了|逃不过真香定律
+
+  - id: ge-you-tang
+    name: Ge You Tang
+    name_zh: 葛优躺
+    lang: zh
+    category: general
+    meaning: Complete exhaustion, lying down giving up on life
+    meaning_zh: 瘫了，彻底躺平，什么都不想干
+    triggers_en: lying flat|giving up|exhausted|can't anymore
+    triggers_zh: 葛优躺|躺平|瘫了|不想动了|废了|咸鱼
+
+  - id: ya-shi-la-nei
+    name: Ya Shi La Nei
+    name_zh: 鸭屎啦你
+    lang: zh
+    category: general
+    meaning: Playful insult, "you're trash", from Stephen Chow movie
+    meaning_zh: 周星驰电影台词，玩笑式吐槽"你太差了"
+    triggers_en:
+    triggers_zh: 鸭屎啦你|你太菜了|垃圾|周星驰
