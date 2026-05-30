@@ -8,6 +8,10 @@ Meme template index for AI agents. YAML-only, no images.
 ├── meme_index.yml              # Master index
 ├── templates/                  # Per-meme layout templates
 │   └── distracted_boyfriend.yml
+├── skill/                      # Render skill
+│   ├── SKILL.md                # Full docs (install + Pillow + ImageMagick)
+│   ├── meme_render.py          # Python renderer (Pillow + ImageMagick)
+│   └── meme_render.sh          # Shell renderer (ImageMagick)
 └── README.md
 ```
 
