@@ -1,0 +1,141 @@
+# awesome-meme index
+# Text memes are in data/text/ organized by year
+# This file lists image and celebrity type memes only
+
+memes:
+  # --- image (needs template + renderer) ---
+
+  - id: distracted-boyfriend
+    name: Distracted Boyfriend
+    name_zh: 分心男友
+    type: image
+    meaning: Tempted by a new option while committed to something
+    meaning_zh: 喜新厌旧
+
+  - id: success-kid
+    name: Success Kid
+    name_zh: 成功小子
+    type: image
+    meaning: A small but genuine victory
+    meaning_zh: 庆祝小胜利
+
+  - id: this-is-fine
+    name: This is Fine
+    name_zh: 一切都好
+    type: image
+    meaning: Everything is falling apart but pretending it's okay
+    meaning_zh: 一切崩塌但假装没事
+
+  - id: drake-hotline-bling
+    name: Drake Hotline Bling
+    name_zh: 德雷克拒绝接受
+    type: image
+    meaning: Rejecting one option, preferring another
+    meaning_zh: 二选一对比
+
+  - id: roll-safe
+    name: Roll Safe
+    name_zh: 拍头思考
+    type: image
+    meaning: Clever-sounding but terrible idea
+    meaning_zh: 自以为聪明但其实荒谬
+
+  - id: woman-yelling-cat
+    name: Woman Yelling at Cat
+    name_zh: 女人对猫大喊
+    type: image
+    meaning: Dramatic argument, emotional overreaction
+    meaning_zh: 激烈辩论、情绪化反应
+
+  - id: hide-pain-harold
+    name: Hide the Pain Harold
+    name_zh: 隐藏痛苦的哈罗德
+    type: image
+    meaning: Smiling through pain
+    meaning_zh: 表面微笑但内心崩溃
+
+  - id: doge
+    name: Doge
+    name_zh: 狗狗表情
+    type: image
+    meaning: Confusion, surprise, ironic praise
+    meaning_zh: 困惑、惊讶、反讽式赞美
+
+  - id: expanding-brain
+    name: Expanding Brain
+    name_zh: 膨胀的大脑
+    type: image
+    meaning: Increasingly absurd progression of ideas
+    meaning_zh: 越来越"高级"但其实越来越离谱
+
+  - id: nyan-cat
+    name: Nyan Cat
+    name_zh: 彩虹猫
+    type: image
+    meaning: Pure joyful nonsense
+    meaning_zh: 无意义的快乐
+
+  - id: vim-exit
+    name: How to Exit Vim
+    name_zh: 怎么退出Vim
+    type: image
+    meaning: Trapped and unable to escape
+    meaning_zh: 被困住出不来
+
+  - id: it-works-why
+    name: It Works Why
+    name_zh: 能跑就行别问为什么
+    type: image
+    meaning: Code works but nobody knows why
+    meaning_zh: 代码能跑但没人知道为什么
+
+  - id: wtf-per-minute
+    name: WTFs Per Minute
+    name_zh: 每分钟WTF数
+    type: image
+    meaning: Code quality measured in WTFs
+    meaning_zh: 代码质量用每分钟骂几次衡量
+
+  - id: code-review-guy
+    name: Code Review Guy
+    name_zh: 代码审查狂人
+    type: image
+    meaning: Overly strict code reviewer
+    meaning_zh: 代码审查时极其严格
+
+  - id: monday-deploy
+    name: Monday Deploy
+    name_zh: 周一部署
+    type: image
+    meaning: Deploying on Monday/Friday is a terrible idea
+    meaning_zh: 周五部署是大忌
+
+  - id: stackoverflow-copy
+    name: Stack Overflow Copy
+    name_zh: 复制粘贴工程师
+    type: image
+    meaning: Programming by copy-pasting from Stack Overflow
+    meaning_zh: 编程就是复制粘贴
+
+  # --- celebrity (use sparingly, no image URLs) ---
+
+  - id: zhenxiang
+    name: Zhen Xiang
+    name_zh: 真香
+    type: celebrity
+    meaning: Rejected at first, gladly accepted later
+    meaning_zh: 事前坚决拒绝，事后欣然接受
+
+  - id: ge-you-tang
+    name: Ge You Tang
+    name_zh: 葛优躺
+    type: celebrity
+    meaning: Complete exhaustion, giving up
+    meaning_zh: 瘫了，彻底躺平
+
+  - id: ya-shi-la-nei
+    name: Ya Shi La Nei
+    name_zh: 鸭屎啦你
+    type: celebrity
+    meaning: Playful insult, from Stephen Chow movie
+    meaning_zh: 周星驰电影台词，玩笑式吐槽

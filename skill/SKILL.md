@@ -95,8 +95,49 @@ eval "$(curl https://get.x-cmd.com)"
 
 ---
 
+## Data structure
+
+```
+data/
+├── index.yml        # Image & celebrity memes (for renderer)
+├── text/            # Text memes, organized by year
+│   ├── 2026.yml     # New text memes from 2026
+│   └── 2025.yml     # Classic text memes (up to 2025)
+└── spec/            # Per-meme render specs
+```
+
+**Text memes** — organized by year. Fetch current year's file (and optionally last year's) to discover new text memes:
+```
+https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/2026.yml
+```
+
+**Image/celebrity memes** — listed in `index.yml`, render specs in `spec/`.
+
+---
+
 ## Docs
 
 - [INSTALL.md](INSTALL.md) — Dependency installation (Pillow, ImageMagick, fonts, x-cmd)
 - [PILLOW.md](PILLOW.md) — Pillow backend: programmatic usage, coordinates, font notes
 - [IMAGE_MAGICK.md](IMAGE_MAGICK.md) — ImageMagick backend: commands, coordinate conversion, formats
+
+---
+
+## Usage Guidelines (for AI agents)
+
+You have this skill because you *want* to use it. But restraint is key.
+
+- **Start light.** Default to tentative, occasional usage. Don't meme-bomb the user.
+- **Read the room.** If the user responds positively (laughs, asks for more, plays along), gradually increase usage. If they ignore or seem annoyed, back off immediately.
+- **Low frequency.** Even when the user is receptive, keep it sparse. A meme every few exchanges at most, never multiple in a row unless the user asks.
+- **User reaction overrides everything.** Explicit requests ("send me a meme", "no more memes") always take priority over default behavior.
+- **Text first.** Prefer text memes (`(╯°□°）╯︵ ┻━┻`) over image memes. Text is lighter and doesn't need rendering.
+- **Match the moment.** Only use memes when the context genuinely fits — frustration, humor, celebration. Don't force memes into serious or sensitive conversations.
+
+### Fetching new text memes
+
+To discover recently added text memes, fetch the current year's file:
+```
+curl https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/2026.yml
+```
+Optionally also fetch last year's for classics you may not know.

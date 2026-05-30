@@ -1,0 +1,80 @@
+# Text memes — up to 2025
+# Classic/established text memes
+
+memes:
+  - id: table-flip
+    name: Table Flip
+    name_zh: 掀桌
+    meaning: Extreme frustration, rage quit
+    meaning_zh: 崩溃到掀桌，忍无可忍
+    output: "(╯°□°）╯︵ ┻━┻"
+
+  - id: table-unflip
+    name: Table Unflip
+    name_zh: 把桌子扶好
+    meaning: Calming down, restoring order
+    meaning_zh: 冷静了，把桌子扶好
+    output: "┬─┬ ノ( ゜-゜ノ)"
+
+  - id: shrug
+    name: Shrug
+    name_zh: 耸肩
+    meaning: Indifference, acceptance of chaos
+    meaning_zh: 无所谓了，随便吧
+    output: "¯ (ツ)_/¯"
+
+  - id: look-of-disapproval
+    name: Look of Disapproval
+    name_zh: 不赞同的眼神
+    meaning: Disapproval, disappointment
+    meaning_zh: 不赞同、失望、鄙视
+    output: "ಠ_ಠ"
+
+  - id: lenny-face
+    name: Lenny Face
+    name_zh: 猥琐脸
+    meaning: Mischievous, knowing smirk
+    meaning_zh: 贼笑、心照不宣
+    output: "( ͡° ͜ʖ ͡°)"
+
+  - id: lgtm
+    name: LGTM
+    name_zh: LGTM
+    meaning: Approving a pull request
+    meaning_zh: 看起来不错，通过审查
+    output: "✅ LGTM"
+
+  - id: panda-head-cry
+    name: Panda Head Crying
+    name_zh: 熊猫头流泪
+    meaning: Pretending to be fine while broken inside
+    meaning_zh: 表面坚强，内心崩溃
+    output: "😭 假装没事"
+
+  - id: panda-head-doge
+    name: Panda Head Doge
+    name_zh: 熊猫头狗头
+    meaning: Sarcastic or ironic reaction
+    meaning_zh: 阴阳怪气，讽刺调侃
+    output: "🐶 你说得对（狗头）"
+
+  - id: panda-head-work
+    name: Panda Head Overtime
+    name_zh: 熊猫头加班
+    meaning: Exhaustion from overwork
+    meaning_zh: 加班到麻木，社畜日常
+    output: "🐼 加班使我快乐（不是"
+
+  - id: programmer-drink
+    name: Programmer Tea
+    name_zh: 程序员喝茶
+    meaning: Zen mode, calmly watching everything burn
+    meaning_zh: 淡定喝茶看戏，佛系程序员
+    output: "🍵 佛系喝茶，Bug 随它去吧"
+
+  - id: bug-feature
+    name: Bug → Feature
+    name_zh: 不是Bug是特性
+    meaning: Reframing a bug as an intentional feature
+    meaning_zh: 把 Bug 说成特性，经典甩锅
+    output: "🐛➡️✨ It's not a bug, it's a feature"

@@ -1,0 +1,10 @@
+# Text memes — 2026
+# New text/ASCII memes added this year
+
+memes:
+  - id: friendship-boat
+    name: Friendship Boat
+    name_zh: 友谊的小船
+    meaning: A friendship that capsizes easily
+    meaning_zh: 友谊的小船说翻就翻
+    output: "⛵ 友谊的小船说翻就翻"

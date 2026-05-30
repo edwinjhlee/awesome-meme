@@ -1,0 +1,22 @@
+id: friendship-boat
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "Friendship boat capsizing"
+    slots:
+      - id: text
+        role: "reason the boat flipped"
+        role_zh: "翻船原因"
+        pos: [200, 50]
+example:
+  texts: ["友谊的小船说翻就翻"]
+render_hint: text-only

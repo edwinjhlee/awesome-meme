@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Convert awesome-meme YML indexes to TSV.
+Usage: python3 .x-cmd/yml2tsv [input.yml] [output.tsv]
+If no args, converts all known indexes.
+"""
+import sys, yaml, csv, pathlib
+
+FIELDS = ["id", "name", "name_zh", "type", "meaning", "meaning_zh", "output"]
+
+def convert(src, dst):
+    data = yaml.safe_load(pathlib.Path(src).read_text())
+    memes = data.get("memes", [])
+    with open(dst, "w", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        w.writerow(FIELDS)
+        for m in memes:
+            w.writerow([m.get(k, "") for k in FIELDS])
+    print(f"{src} -> {dst} ({len(memes)} entries)")
+
+if __name__ == "__main__":
+    if len(sys.argv) == 3:
+        convert(sys.argv[1], sys.argv[2])
+    else:
+        base = pathlib.Path(__file__).resolve().parent.parent / "data"
+        for yml in sorted(base.glob("index*.yml")):
+            convert(str(yml), str(yml.with_suffix(".tsv")))
