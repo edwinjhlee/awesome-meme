@@ -6,14 +6,28 @@ import argparse
 import os
 import subprocess
 import sys
+import tempfile
 
 import yaml
 from PIL import Image, ImageDraw, ImageFont
 
+GITHUB_RAW = "https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main"
 
-def load_template(path):
-    with open(path) as f:
-        return yaml.safe_load(f)
+
+def _resolve_template(template_arg):
+    """Accept a local path or meme ID (e.g. 'distracted-boyfriend')."""
+    if os.path.isfile(template_arg):
+        with open(template_arg) as f:
+            return yaml.safe_load(f)
+    # Treat as meme ID, download from GitHub
+    meme_id = template_arg.replace("_", "-")
+    url = f"{GITHUB_RAW}/templates/{meme_id}.yml"
+    print(f"Downloading template: {url}")
+    r = subprocess.run(["curl", "-sL", url], capture_output=True, text=True, timeout=10)
+    if r.returncode != 0 or not r.stdout.strip():
+        print(f"Error: template '{meme_id}' not found", file=sys.stderr)
+        sys.exit(1)
+    return yaml.safe_load(r.stdout)
 
 
 def download_image(urls, dest):
@@ -119,17 +133,17 @@ def _get_layout(template, layout_id):
 
 def main():
     parser = argparse.ArgumentParser(description="Meme text overlay renderer")
-    parser.add_argument("template", help="Path to meme template YAML")
+    parser.add_argument("template", help="Meme ID (e.g. distracted-boyfriend) or path to template YAML")
     parser.add_argument("texts", nargs="+", help="Text for each slot")
     parser.add_argument("--layout", default=None, help="Layout preset (e.g. chest-label)")
     parser.add_argument("--backend", choices=["pillow", "magick"], default="pillow")
     parser.add_argument("--output", default="meme_output.jpg", help="Output file path")
     args = parser.parse_args()
 
-    tmpl = load_template(args.template)
+    tmpl = _resolve_template(args.template)
 
     # Download image
-    dest = "/tmp/_meme_base.jpg"
+    dest = tempfile.mktemp(suffix=".jpg", prefix="_meme_base_")
     img_path = download_image(tmpl["urls"], dest)
     if not img_path:
         print("Error: could not download image", file=sys.stderr)

@@ -1,25 +1,30 @@
 # meme skill
 
-Generate meme images by overlaying text onto templates.
+Render meme images by overlaying text onto templates.
+
+Templates (YAML) are stored separately in [awesome-meme](https://github.com/edwinjhlee/awesome-meme). The skill downloads template data on demand.
 
 ## Quick Start
 
 ```bash
-# Pillow backend (recommended)
-python3 skill/meme_render.py templates/distracted_boyfriend.yml ZIG ME RUST
+# By meme ID (auto-downloads template from GitHub)
+python3 skill/meme_render.py distracted-boyfriend ZIG ME RUST
+
+# By local template file
+python3 skill/meme_render.py /path/to/distracted_boyfriend.yml ZIG ME RUST
 
 # ImageMagick backend
-python3 skill/meme_render.py templates/distracted_boyfriend.yml ZIG ME RUST --backend magick
+python3 skill/meme_render.py distracted-boyfriend ZIG ME RUST --backend magick
 
-# Pure shell (ImageMagick only)
-bash skill/meme_render.sh templates/distracted_boyfriend.yml "ZIG" "ME" "RUST"
+# Pure shell (local template only)
+bash skill/meme_render.sh distracted_boyfriend.yml "ZIG" "ME" "RUST"
 ```
 
 ## Options
 
 - `--layout` — chest-label (default), above-head, bottom-label
 - `--backend` — pillow (default), magick
-- `--output` — output file path
+- `--output` — output file path (default: meme_output.jpg)
 
 ## Install Dependencies
 
@@ -81,7 +86,7 @@ draw.text(
     (170, 323), "ZIG",
     font=font, fill="white",
     stroke_width=4, stroke_fill="black",
-    anchor="mm"  # center-center anchor
+    anchor="mm"
 )
 
 img.save("output.jpg", quality=95)
