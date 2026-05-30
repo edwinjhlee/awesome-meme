@@ -1,0 +1,15 @@
+name: Sync to Gitee
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git remote add gitee https://edwinjhlee:${{ secrets.GITEE_TOKEN }}@gitee.com/edwinjhlee/awesome-meme.git
+          git push gitee main --force
