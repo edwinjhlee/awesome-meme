@@ -1,0 +1,27 @@
+id: hide-pain-harold
+image_size: [500, 375]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/a/a4/Hide_the_Pain_Harold_%28Andr%C3%A1s_Arat%C3%A1%29.jpg
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text, smiling through pain"
+    slots:
+      - id: top
+        role: "setup / fake smile"
+        role_zh: "铺垫/假笑"
+        pos: [250, 35]
+      - id: bottom
+        role: "punchline / hidden pain"
+        role_zh: "点睛/隐藏的痛苦"
+        pos: [250, 345]
+example:
+  texts: ["Smiling at code review", "It's all legacy code"]

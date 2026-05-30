@@ -1,0 +1,27 @@
+id: bug-feature
+image_size: [500, 375]
+urls:
+  - src: imgflip
+    url: https://i.imgflip.com/2fm6x.jpg
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text"
+    slots:
+      - id: top
+        role: "setup"
+        role_zh: "铺垫"
+        pos: [250, 35]
+      - id: bottom
+        role: "punchline"
+        role_zh: "点睛"
+        pos: [250, 345]
+example:
+  texts: ["That's not a bug", "It's a feature"]

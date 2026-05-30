@@ -1,0 +1,27 @@
+id: woman-yelling-cat
+image_size: [447, 223]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/1/1f/WomanYellingAtACat_meme.jpg
+font:
+  family: Impact
+  size: 28
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text format"
+    slots:
+      - id: top
+        role: "the yelling / demanding side"
+        role_zh: "大喊/要求的一方"
+        pos: [223, 22]
+      - id: bottom
+        role: "the confused / innocent side"
+        role_zh: "困惑/无辜的一方"
+        pos: [223, 200]
+example:
+  texts: ["Junior explaining the bug", "Senior's code that caused it"]

@@ -1,0 +1,26 @@
+id: zhenxiang
+image_size: [500, 375]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "真香：先拒绝后接受"
+    slots:
+      - id: top
+        role: "先说的狠话"
+        role_zh: "先说的狠话"
+        pos: [250, 35]
+      - id: bottom
+        role: "后来真香"
+        role_zh: "后来真香"
+        pos: [250, 345]
+example:
+  texts: ["我绝对不会用 Rust", "Rust 真香"]
+render_hint: no-image

@@ -1,0 +1,27 @@
+id: nyan-cat
+image_size: [250, 250]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG
+font:
+  family: Impact
+  size: 28
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text format"
+    slots:
+      - id: top
+        role: "setup"
+        role_zh: "铺垫"
+        pos: [125, 25]
+      - id: bottom
+        role: "punchline"
+        role_zh: "点睛"
+        pos: [125, 225]
+example:
+  texts: ["Code works on Friday", "Nyan nyan nyan"]

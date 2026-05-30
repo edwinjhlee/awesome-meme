@@ -1,0 +1,22 @@
+id: panda-head-work
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "Text-only, 加班到麻木"
+    slots:
+      - id: text
+        role: "the exhaustion message"
+        role_zh: "社畜的话"
+        pos: [200, 50]
+example:
+  texts: ["又加班了 没事"]
+render_hint: text-only

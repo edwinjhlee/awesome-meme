@@ -1,0 +1,27 @@
+id: doge
+image_size: [640, 480]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/5/5f/Original_Doge_meme.jpg
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text, wow much meme"
+    slots:
+      - id: top
+        role: "setup"
+        role_zh: "铺垫"
+        pos: [320, 35]
+      - id: bottom
+        role: "punchline"
+        role_zh: "点睛"
+        pos: [320, 445]
+example:
+  texts: ["Wow", "Much code very bug"]

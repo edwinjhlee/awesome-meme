@@ -1,0 +1,27 @@
+id: vim-exit
+image_size: [735, 397]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/commons/8/8a/How_do_I_exit_Vim_Stack_Overflow.png
+font:
+  family: Impact
+  size: 40
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text format"
+    slots:
+      - id: top
+        role: "setup / question"
+        role_zh: "铺垫/问题"
+        pos: [367, 25]
+      - id: bottom
+        role: "punchline / answer"
+        role_zh: "点睛/答案"
+        pos: [367, 375]
+example:
+  texts: ["How to exit Vim?", ":q! and pray"]

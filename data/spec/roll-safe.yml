@@ -1,0 +1,27 @@
+id: roll-safe
+image_size: [421, 236]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/7/79/Roll_Safe_meme.jpg
+font:
+  family: Impact
+  size: 32
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text format"
+    slots:
+      - id: top
+        role: "setup / clever idea"
+        role_zh: "铺垫/聪明想法"
+        pos: [210, 25]
+      - id: bottom
+        role: "punchline / ironic conclusion"
+        role_zh: "点睛/讽刺结论"
+        pos: [210, 215]
+example:
+  texts: ["Can't have bugs", "If you don't write tests"]

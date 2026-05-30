@@ -1,0 +1,22 @@
+id: programmer-drink
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "Text-only, 佛系程序员喝茶"
+    slots:
+      - id: text
+        role: "the zen message"
+        role_zh: "佛系的话"
+        pos: [200, 50]
+example:
+  texts: ["Bug随便出 我喝茶"]
+render_hint: text-only

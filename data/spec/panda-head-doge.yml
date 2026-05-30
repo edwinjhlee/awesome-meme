@@ -1,0 +1,22 @@
+id: panda-head-doge
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "Text-only, 阴阳怪气"
+    slots:
+      - id: text
+        role: "the sarcastic message"
+        role_zh: "阴阳怪气的话"
+        pos: [200, 50]
+example:
+  texts: ["你说得对 狗头"]
+render_hint: text-only

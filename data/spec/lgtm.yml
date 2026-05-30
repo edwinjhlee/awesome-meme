@@ -1,0 +1,22 @@
+id: lgtm
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 48
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "Looks Good To Me, text-only approval"
+    slots:
+      - id: text
+        role: "approval message"
+        role_zh: "通过消息"
+        pos: [200, 50]
+example:
+  texts: ["LGTM"]
+render_hint: text-only

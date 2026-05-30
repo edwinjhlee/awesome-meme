@@ -1,0 +1,35 @@
+id: expanding-brain
+image_size: [620, 816]
+urls:
+  - src: imgflip
+    url: https://i.imgflip.com/1jwhww.jpg
+font:
+  family: Impact
+  size: 32
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: four-panel
+    default: true
+    desc: "Four progressive panels: normal → enlightened → galaxy → absurd"
+    slots:
+      - id: panel1
+        role: "level 1 — basic / normal"
+        role_zh: "第一级 — 普通"
+        pos: [460, 100]
+      - id: panel2
+        role: "level 2 — better / advanced"
+        role_zh: "第二级 — 进阶"
+        pos: [460, 305]
+      - id: panel3
+        role: "level 3 — galaxy brain / genius"
+        role_zh: "第三级 — 天才"
+        pos: [460, 510]
+      - id: panel4
+        role: "level 4 — transcendent / absurd"
+        role_zh: "第四级 — 超越"
+        pos: [460, 715]
+example:
+  texts: ["Using IDE", "Using Vim", "Using ed", "Using cat > file"]

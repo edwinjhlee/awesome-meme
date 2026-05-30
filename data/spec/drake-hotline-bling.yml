@@ -1,0 +1,27 @@
+id: drake-hotline-bling
+image_size: [1400, 1400]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/commons/c/c9/Drake_-_Hotline_Bling.png
+font:
+  family: Impact
+  size: 64
+  color: white
+  stroke_color: black
+  stroke_width: 4
+  anchor: mm
+layouts:
+  - id: reject-accept
+    default: true
+    desc: "Top: what you reject. Bottom: what you accept."
+    slots:
+      - id: reject
+        role: "the thing being rejected / dismissed"
+        role_zh: "拒绝/不喜欢的"
+        pos: [1050, 350]
+      - id: accept
+        role: "the thing being accepted / preferred"
+        role_zh: "接受/喜欢的"
+        pos: [1050, 1050]
+example:
+  texts: ["Debugging with print", "Debugging with debugger"]

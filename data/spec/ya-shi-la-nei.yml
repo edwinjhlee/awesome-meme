@@ -1,0 +1,26 @@
+id: ya-shi-la-nei
+image_size: [500, 375]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "鸭屎啦你：玩笑式吐槽"
+    slots:
+      - id: top
+        role: "铺垫"
+        role_zh: "铺垫"
+        pos: [250, 35]
+      - id: bottom
+        role: "吐槽"
+        role_zh: "吐槽"
+        pos: [250, 345]
+example:
+  texts: ["你说你代码写得好的", "鸭屎啦你"]
+render_hint: no-image

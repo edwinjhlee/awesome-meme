@@ -1,0 +1,29 @@
+id: success-kid
+image_size: [388, 258]
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/f/ff/SuccessKid.jpg
+  - src: imgflip
+    url: https://i.imgflip.com/1bhk.jpg
+font:
+  family: Impact
+  size: 32
+  color: white
+  stroke_color: black
+  stroke_width: 3
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text format"
+    slots:
+      - id: top
+        role: "setup / situation"
+        role_zh: "铺垫/场景"
+        pos: [194, 35]
+      - id: bottom
+        role: "punchline / victory"
+        role_zh: "点睛/胜利"
+        pos: [194, 225]
+example:
+  texts: ["Code compiles", "First try"]

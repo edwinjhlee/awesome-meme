@@ -1,0 +1,22 @@
+id: shrug
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "ASCII art shrug, no image needed"
+    slots:
+      - id: text
+        role: "the indifference message"
+        role_zh: "无所谓的话"
+        pos: [200, 50]
+example:
+  texts: ["¯\\_(ツ)_/¯"]
+render_hint: text-only

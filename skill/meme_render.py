@@ -50,6 +50,8 @@ def render_pillow(template, image_path, texts, layout_id, output):
     img = Image.open(image_path)
     if tuple(img.size) != tuple(template["image_size"]):
         img = img.resize(tuple(template["image_size"]))
+    if img.mode == "RGBA":
+        img = img.convert("RGB")
     draw = ImageDraw.Draw(img)
 
     font_cfg = template["font"]

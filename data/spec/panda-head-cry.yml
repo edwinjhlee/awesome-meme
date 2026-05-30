@@ -1,0 +1,22 @@
+id: panda-head-cry
+image_size: [400, 100]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: text-only
+    default: true
+    desc: "Text-only, 表面坚强内心崩溃"
+    slots:
+      - id: text
+        role: "the pain message"
+        role_zh: "崩溃的话"
+        pos: [200, 50]
+example:
+  texts: ["假装没事 内心崩溃"]
+render_hint: text-only
