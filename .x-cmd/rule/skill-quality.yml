@@ -1,0 +1,66 @@
+# skill-quality.yml — Quality rules for awesome-meme skill
+# Apply to: skill/ directory (SKILL.md, *.py, *.sh)
+
+skill-no-data-in-skill:
+  name: No template data in skill directory
+  apply: "skill/"
+  level: error
+  desc:
+  - The skill/ directory must only contain renderer code and documentation.
+  - Never put meme_index.yml, template YAML, or image files inside skill/.
+  - Template data lives in the repo root (meme_index.yml, templates/).
+  - The skill fetches data from GitHub at runtime via meme ID.
+  tldr:
+  - wrong: "skill/templates/distracted_boyfriend.yml or skill/meme_index.yml"
+    right: "templates/distracted_boyfriend.yml and meme_index.yml in repo root"
+
+skill-docs-split:
+  name: Documentation split by topic, SKILL.md is entry point
+  apply: "skill/SKILL.md"
+  level: error
+  desc:
+  - SKILL.md must be concise: Get the Skill → Install → Usage → Options → How It Works → Doc links.
+  - Detailed install instructions go in INSTALL.md.
+  - Pillow-specific details go in PILLOW.md.
+  - ImageMagick-specific details go in IMAGE_MAGICK.md.
+  - SKILL.md links to these sub-docs, not inline all content.
+  tldr:
+  - wrong: "SKILL.md contains full Pillow/ImageMagick docs inline (100+ lines)"
+    right: "SKILL.md has 50-60 lines with links to INSTALL.md, PILLOW.md, IMAGE_MAGICK.md"
+
+skill-two-backends:
+  name: Both Pillow and ImageMagick backends must be supported
+  apply: "skill/meme_render.py"
+  level: error
+  desc:
+  - meme_render.py must support --backend pillow (default) and --backend magick.
+  - Both backends must handle the same template YAML format.
+  - Coordinate conversion between Pillow (center/mm) and ImageMagick (left-baseline) must be correct.
+  tldr:
+  - wrong: "Only Pillow supported, or magick backend broken"
+    right: "Both backends produce correct output from the same template"
+
+skill-meme-id-fetch:
+  name: Renderer supports meme ID auto-fetch from GitHub
+  apply: "skill/meme_render.py"
+  level: error
+  desc:
+  - meme_render.py must accept a meme ID (e.g. distracted-boyfriend) as the first argument.
+  - When given a meme ID (not a file path), it fetches the template YAML from GitHub.
+  - When given a local file path, it reads directly.
+  - The GitHub raw URL pattern: https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/templates/{id}.yml
+  tldr:
+  - wrong: "Only accepts local file paths"
+    right: "python3 meme_render.py distracted-boyfriend TEXT1 TEXT2 works without local template"
+
+skill-get-the-skill-section:
+  name: SKILL.md explains how to download the skill
+  apply: "skill/SKILL.md"
+  level: warn
+  desc:
+  - SKILL.md must have a "Get the Skill" section explaining how to obtain the renderer.
+  - Should cover: git clone, curl single file, and x-cmd (if available).
+  - If mentioning x-cmd, include install link: https://www.x-cmd.com/llms.txt
+  tldr:
+  - wrong: "SKILL.md starts with Usage but no download instructions"
+    right: "SKILL.md has Get the Skill section with git clone / curl / x-cmd options"
