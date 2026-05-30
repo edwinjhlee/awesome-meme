@@ -1,0 +1,12 @@
+id	name	name_zh	lang	category	tags	meaning	meaning_zh	output	triggers_en	triggers_zh
+table-flip	Table Flip	掀桌	en|zh	programmer	cn|global|programmer	Extreme frustration, rage quit	崩溃到掀桌，忍无可忍	(╯°□°）╯︵ ┻━┻	rage quit|table flip|enough|frustrated	掀桌|忍不了|不干了|掀了|崩溃
+table-unflip	Table Unflip	把桌子扶好	en|zh	programmer	cn|global|programmer	Calming down, restoring order	冷静了，把桌子扶好	┬─┬ ノ( ゜-゜ノ)	calm down|never mind|restore	冷静|扶好|算了|没事了
+shrug	Shrug	耸肩	en|zh	general|programmer	cn|global|programmer|general	Indifference, acceptance of chaos, "whatever"	无所谓了，随便吧，就这样吧	¯\_(ツ)_/¯	shrug|whatever|doesn't matter|who knows	随便|无所谓|谁知道呢|就这样吧
+look-of-disapproval	Look of Disapproval	不赞同的眼神	en|zh	general|programmer	cn|global|programmer|general	Disapproval, disappointment, judgment	不赞同、失望、鄙视	ಠ_ಠ	disapprove|disappointed|really|seriously	不行|失望|真的假的|无语
+lenny-face	Lenny Face	猥琐脸	en|zh	general	cn|global|general	Mischievous, suggestive, knowing smirk	贼笑、心照不宣、猥琐	( ͡° ͜ʖ ͡°)	naughty|wink|suggestive|devious	贼|嘿嘿|心照不宣|猥琐
+lgtm	LGTM	LGTM	en	programmer	global|programmer	Looks Good To Me, approving a pull request	看起来不错，通过审查	✅ LGTM	LGTM|looks good|approved|ship it|merge it	LGTM|通过了|可以合并|没问题
+panda-head-cry	Panda Head Crying	熊猫头流泪	zh	programmer|general	cn|programmer|general	Pretending to be fine while internally broken	表面坚强，内心崩溃，程序员专属自嘲	😭 假装没事	crying inside|pretending to be fine	我太难了|崩溃|又要重构|凌晨三点|线上故障|假装没事
+panda-head-doge	Panda Head Doge	熊猫头狗头	zh	programmer|general	cn|programmer|general	Sarcastic or ironic reaction, often used in code review	阴阳怪气，讽刺调侃，常用于代码审查	🐶 你说得对（狗头）	sarcasm|irony|sure buddy	呵呵|你说得对|狗头|阴阳怪气|滑稽
+panda-head-work	Panda Head Overtime	熊猫头加班	zh	programmer	cn|programmer	Exhaustion from overwork, resignation to endless tasks	加班到麻木，社畜日常	🐼 加班使我快乐（不是	overtime|overwork|exhausted	加班|996|社畜|又要加班|周末加班|干不完
+programmer-drink	Programmer Tea	程序员喝茶	zh	programmer	cn|programmer	Calmly sipping tea while everything burns, zen programmer mode	淡定喝茶看戏，任凭 Bug 横飞的佛系程序员	🍵 佛系喝茶，Bug 随它去吧	calm|sipping tea|nothing matters|zen	喝茶|淡定|佛系|随便吧|看戏
+bug-feature	Bug → Feature	不是Bug是特性	en	programmer	global|programmer	Reframing a bug as an intentional feature	把 Bug 说成特性，经典甩锅	🐛➡️✨ It's not a bug, it's a feature	not a bug|it's a feature|working as intended|by design	不是Bug|是特性|设计如此|预期行为
