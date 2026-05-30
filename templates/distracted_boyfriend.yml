@@ -1,0 +1,76 @@
+id: distracted-boyfriend
+name: Distracted Boyfriend
+name_zh: 分心男友
+desc: Tempted by a new option while already committed to something. Classic 3-slot comparison meme.
+desc_zh: 有了旧的还想看新的，三角色对比 meme。
+category: general|programmer
+
+image_size: [800, 533]
+source_size: [387, 258]
+
+urls:
+  - src: wikipedia
+    url: https://upload.wikimedia.org/wikipedia/en/b/be/Disloyal_man_with_his_girlfriend_looking_at_another_girl.jpg
+  - src: imgflip
+    url: https://i.imgflip.com/1otk96.jpg
+
+font:
+  family: Impact
+  size: 48
+  color: white
+  stroke_color: black
+  stroke_width: 4
+  anchor: mm
+
+layouts:
+  - id: chest-label
+    desc: "Labels on chest/torso area. Most intuitive association, classic meme style."
+    desc_zh: "胸前标注，关联最直观，经典 meme 用法"
+    default: true
+    slots:
+      - id: left
+        role: "the temptation / new option"
+        role_zh: "走过来的新人/诱惑"
+        pos: [170, 323]
+      - id: center
+        role: "the decider / protagonist"
+        role_zh: "主角/决策者"
+        pos: [427, 263]
+      - id: right
+        role: "the current / being replaced"
+        role_zh: "现任/被嫌弃的"
+        pos: [645, 353]
+
+  - id: above-head
+    desc: "Labels above heads. Clean look, works well with uncluttered backgrounds."
+    desc_zh: "头顶标注，不遮挡人物，背景干净时适用"
+    slots:
+      - id: left
+        role: "the temptation / new option"
+        role_zh: "走过来的新人/诱惑"
+        pos: [193, 53]
+      - id: center
+        role: "the decider / protagonist"
+        role_zh: "主角/决策者"
+        pos: [447, 63]
+      - id: right
+        role: "the current / being replaced"
+        role_zh: "现任/被嫌弃的"
+        pos: [665, 138]
+
+  - id: bottom-label
+    desc: "Labels at bottom. Caption style, preserves full image clarity."
+    desc_zh: "底部标注，配图说明感，保留画面完整"
+    slots:
+      - id: left
+        role: "the temptation / new option"
+        role_zh: "走过来的新人/诱惑"
+        pos: [193, 453]
+      - id: center
+        role: "the decider / protagonist"
+        role_zh: "主角/决策者"
+        pos: [447, 413]
+      - id: right
+        role: "the current / being replaced"
+        role_zh: "现任/被嫌弃的"
+        pos: [665, 473]
