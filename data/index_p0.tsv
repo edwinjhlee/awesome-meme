@@ -1,7 +1,7 @@
 id	name	name_zh	lang	category	tags	meaning	meaning_zh	output	triggers_en	triggers_zh
 table-flip	Table Flip	掀桌	en|zh	programmer	cn|global|programmer	Extreme frustration, rage quit	崩溃到掀桌，忍无可忍	(╯°□°）╯︵ ┻━┻	rage quit|table flip|enough|frustrated	掀桌|忍不了|不干了|掀了|崩溃
 table-unflip	Table Unflip	把桌子扶好	en|zh	programmer	cn|global|programmer	Calming down, restoring order	冷静了，把桌子扶好	┬─┬ ノ( ゜-゜ノ)	calm down|never mind|restore	冷静|扶好|算了|没事了
-shrug	Shrug	耸肩	en|zh	general|programmer	cn|global|programmer|general	Indifference, acceptance of chaos, "whatever"	无所谓了，随便吧，就这样吧	¯\_(ツ)_/¯	shrug|whatever|doesn't matter|who knows	随便|无所谓|谁知道呢|就这样吧
+shrug	Shrug	耸肩	en|zh	general|programmer	cn|global|programmer|general	Indifference, acceptance of chaos, "whatever"	无所谓了，随便吧，就这样吧	¯ (ツ)_/¯	shrug|whatever|doesn't matter|who knows	随便|无所谓|谁知道呢|就这样吧
 look-of-disapproval	Look of Disapproval	不赞同的眼神	en|zh	general|programmer	cn|global|programmer|general	Disapproval, disappointment, judgment	不赞同、失望、鄙视	ಠ_ಠ	disapprove|disappointed|really|seriously	不行|失望|真的假的|无语
 lenny-face	Lenny Face	猥琐脸	en|zh	general	cn|global|general	Mischievous, suggestive, knowing smirk	贼笑、心照不宣、猥琐	( ͡° ͜ʖ ͡°)	naughty|wink|suggestive|devious	贼|嘿嘿|心照不宣|猥琐
 lgtm	LGTM	LGTM	en	programmer	global|programmer	Looks Good To Me, approving a pull request	看起来不错，通过审查	✅ LGTM	LGTM|looks good|approved|ship it|merge it	LGTM|通过了|可以合并|没问题

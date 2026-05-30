@@ -1,136 +1,273 @@
-# Meme Index — Text/ASCII only, no images needed
-# Usage: match trigger → output text directly
+# P0 Meme Index — Text/ASCII only, no images needed
+# Usage: match trigger -> output text directly
 
 memes:
   - id: table-flip
     name: Table Flip
     name_zh: 掀桌
     lang: en|zh
-    category: programmer
-    tags: cn|global|programmer
+    category:
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
     meaning: Extreme frustration, rage quit
     meaning_zh: 崩溃到掀桌，忍无可忍
-    triggers_en: "rage quit|table flip|enough|frustrated"
-    triggers_zh: "掀桌|忍不了|不干了|掀了|崩溃"
+    triggers_en:
+      - "rage quit"
+      - "table flip"
+      - "enough"
+      - "frustrated"
+    triggers_zh:
+      - "掀桌"
+      - "忍不了"
+      - "不干了"
+      - "掀了"
+      - "崩溃"
     output: "(╯°□°）╯︵ ┻━┻"
 
   - id: table-unflip
     name: Table Unflip
     name_zh: 把桌子扶好
     lang: en|zh
-    category: programmer
-    tags: cn|global|programmer
+    category:
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
     meaning: Calming down, restoring order
     meaning_zh: 冷静了，把桌子扶好
-    triggers_en: "calm down|never mind|restore"
-    triggers_zh: "冷静|扶好|算了|没事了"
+    triggers_en:
+      - "calm down"
+      - "never mind"
+      - "restore"
+    triggers_zh:
+      - "冷静"
+      - "扶好"
+      - "算了"
+      - "没事了"
     output: "┬─┬ ノ( ゜-゜ノ)"
 
   - id: shrug
     name: Shrug
     name_zh: 耸肩
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Indifference, acceptance of chaos, "whatever"
     meaning_zh: 无所谓了，随便吧，就这样吧
-    triggers_en: "shrug|whatever|doesn't matter|who knows"
-    triggers_zh: "随便|无所谓|谁知道呢|就这样吧"
-    output: "¯\_(ツ)_/¯"
+    triggers_en:
+      - "shrug"
+      - "whatever"
+      - "doesn't matter"
+      - "who knows"
+    triggers_zh:
+      - "随便"
+      - "无所谓"
+      - "谁知道呢"
+      - "就这样吧"
+    output: "¯ (ツ)_/¯"
 
   - id: look-of-disapproval
     name: Look of Disapproval
     name_zh: 不赞同的眼神
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Disapproval, disappointment, judgment
     meaning_zh: 不赞同、失望、鄙视
-    triggers_en: "disapprove|disappointed|really|seriously"
-    triggers_zh: "不行|失望|真的假的|无语"
+    triggers_en:
+      - "disapprove"
+      - "disappointed"
+      - "really"
+      - "seriously"
+    triggers_zh:
+      - "不行"
+      - "失望"
+      - "真的假的"
+      - "无语"
     output: "ಠ_ಠ"
 
   - id: lenny-face
     name: Lenny Face
     name_zh: 猥琐脸
     lang: en|zh
-    category: general
-    tags: cn|global|general
+    category:
+      - general
+    tags:
+      - cn
+      - global
+      - general
     meaning: Mischievous, suggestive, knowing smirk
     meaning_zh: 贼笑、心照不宣、猥琐
-    triggers_en: "naughty|wink|suggestive|devious"
-    triggers_zh: "贼|嘿嘿|心照不宣|猥琐"
+    triggers_en:
+      - "naughty"
+      - "wink"
+      - "suggestive"
+      - "devious"
+    triggers_zh:
+      - "贼"
+      - "嘿嘿"
+      - "心照不宣"
+      - "猥琐"
     output: "( ͡° ͜ʖ ͡°)"
 
   - id: lgtm
     name: LGTM
     name_zh: LGTM
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Looks Good To Me, approving a pull request
     meaning_zh: 看起来不错，通过审查
-    triggers_en: "LGTM|looks good|approved|ship it|merge it"
-    triggers_zh: "LGTM|通过了|可以合并|没问题"
+    triggers_en:
+      - "LGTM"
+      - "looks good"
+      - "approved"
+      - "ship it"
+      - "merge it"
+    triggers_zh:
+      - "LGTM"
+      - "通过了"
+      - "可以合并"
+      - "没问题"
     output: "✅ LGTM"
 
   - id: panda-head-cry
     name: Panda Head Crying
     name_zh: 熊猫头流泪
     lang: zh
-    category: programmer|general
-    tags: cn|programmer|general
+    category:
+      - programmer
+      - general
+    tags:
+      - cn
+      - programmer
+      - general
     meaning: Pretending to be fine while internally broken
     meaning_zh: 表面坚强，内心崩溃，程序员专属自嘲
-    triggers_en: "crying inside|pretending to be fine"
-    triggers_zh: "我太难了|崩溃|又要重构|凌晨三点|线上故障|假装没事"
+    triggers_en:
+      - "crying inside"
+      - "pretending to be fine"
+    triggers_zh:
+      - "我太难了"
+      - "崩溃"
+      - "又要重构"
+      - "凌晨三点"
+      - "线上故障"
+      - "假装没事"
     output: "😭 假装没事"
 
   - id: panda-head-doge
     name: Panda Head Doge
     name_zh: 熊猫头狗头
     lang: zh
-    category: programmer|general
-    tags: cn|programmer|general
+    category:
+      - programmer
+      - general
+    tags:
+      - cn
+      - programmer
+      - general
     meaning: Sarcastic or ironic reaction, often used in code review
     meaning_zh: 阴阳怪气，讽刺调侃，常用于代码审查
-    triggers_en: "sarcasm|irony|sure buddy"
-    triggers_zh: "呵呵|你说得对|狗头|阴阳怪气|滑稽"
+    triggers_en:
+      - "sarcasm"
+      - "irony"
+      - "sure buddy"
+    triggers_zh:
+      - "呵呵"
+      - "你说得对"
+      - "狗头"
+      - "阴阳怪气"
+      - "滑稽"
     output: "🐶 你说得对（狗头）"
 
   - id: panda-head-work
     name: Panda Head Overtime
     name_zh: 熊猫头加班
     lang: zh
-    category: programmer
-    tags: cn|programmer
+    category:
+      - programmer
+    tags:
+      - cn
+      - programmer
     meaning: Exhaustion from overwork, resignation to endless tasks
     meaning_zh: 加班到麻木，社畜日常
-    triggers_en: "overtime|overwork|exhausted"
-    triggers_zh: "加班|996|社畜|又要加班|周末加班|干不完"
+    triggers_en:
+      - "overtime"
+      - "overwork"
+      - "exhausted"
+    triggers_zh:
+      - "加班"
+      - "996"
+      - "社畜"
+      - "又要加班"
+      - "周末加班"
+      - "干不完"
     output: "🐼 加班使我快乐（不是"
 
   - id: programmer-drink
     name: Programmer Tea
     name_zh: 程序员喝茶
     lang: zh
-    category: programmer
-    tags: cn|programmer
+    category:
+      - programmer
+    tags:
+      - cn
+      - programmer
     meaning: Calmly sipping tea while everything burns, zen programmer mode
     meaning_zh: 淡定喝茶看戏，任凭 Bug 横飞的佛系程序员
-    triggers_en: "calm|sipping tea|nothing matters|zen"
-    triggers_zh: "喝茶|淡定|佛系|随便吧|看戏"
+    triggers_en:
+      - "calm"
+      - "sipping tea"
+      - "nothing matters"
+      - "zen"
+    triggers_zh:
+      - "喝茶"
+      - "淡定"
+      - "佛系"
+      - "随便吧"
+      - "看戏"
     output: "🍵 佛系喝茶，Bug 随它去吧"
 
   - id: bug-feature
     name: Bug → Feature
     name_zh: 不是Bug是特性
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Reframing a bug as an intentional feature
     meaning_zh: 把 Bug 说成特性，经典甩锅
-    triggers_en: "not a bug|it's a feature|working as intended|by design"
-    triggers_zh: "不是Bug|是特性|设计如此|预期行为"
+    triggers_en:
+      - "not a bug"
+      - "it's a feature"
+      - "working as intended"
+      - "by design"
+    triggers_zh:
+      - "不是Bug"
+      - "是特性"
+      - "设计如此"
+      - "预期行为"
     output: "🐛➡️✨ It's not a bug, it's a feature"
 

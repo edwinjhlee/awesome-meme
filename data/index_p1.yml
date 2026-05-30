@@ -1,16 +1,30 @@
-# Meme Index — External image links, requires renderer
+# P1 Meme Index — External image links, requires renderer
 
 memes:
   - id: distracted-boyfriend
     name: Distracted Boyfriend
     name_zh: 分心男友
     lang: en|zh
-    category: programmer|general
-    tags: cn|global|programmer|general
+    category:
+      - programmer
+      - general
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Tempted by a new option while already committed to something
     meaning_zh: 有了旧的还想看新的，喜新厌旧
-    triggers_en: "tempted|new framework|distracted|switching to"
-    triggers_zh: "换框架|新技术|又想换了|喜新厌旧"
+    triggers_en:
+      - "tempted"
+      - "new framework"
+      - "distracted"
+      - "switching to"
+    triggers_zh:
+      - "换框架"
+      - "新技术"
+      - "又想换了"
+      - "喜新厌旧"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/b/be/Disloyal_man_with_his_girlfriend_looking_at_another_girl.jpg"
     url_imgflip: "https://i.imgflip.com/1otk96.jpg"
 
@@ -18,12 +32,29 @@ memes:
     name: Success Kid
     name_zh: 成功小子
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: A small but genuine victory, often ironic
     meaning_zh: 庆祝小胜利，握拳的感觉
-    triggers_en: "it works|compiled|no error|success|finally"
-    triggers_zh: "跑通了|编译成功|没报错|一次过|成了|终于"
+    triggers_en:
+      - "it works"
+      - "compiled"
+      - "no error"
+      - "success"
+      - "finally"
+    triggers_zh:
+      - "跑通了"
+      - "编译成功"
+      - "没报错"
+      - "一次过"
+      - "成了"
+      - "终于"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/f/ff/SuccessKid.jpg"
     url_imgflip: "https://i.imgflip.com/1bhk.jpg"
 
@@ -31,12 +62,25 @@ memes:
     name: This is Fine
     name_zh: 一切都好
     lang: en|zh
-    category: programmer
-    tags: cn|global|programmer
+    category:
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
     meaning: Everything is falling apart but pretending it's okay
     meaning_zh: 一切都在崩塌但假装没事，经典程序员心态
-    triggers_en: "this is fine|on fire|everything is fine|production down"
-    triggers_zh: "没事|还好|挺好的|线上挂了|服务崩了"
+    triggers_en:
+      - "this is fine"
+      - "on fire"
+      - "everything is fine"
+      - "production down"
+    triggers_zh:
+      - "没事"
+      - "还好"
+      - "挺好的"
+      - "线上挂了"
+      - "服务崩了"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/c/cb/This_is_fine_from_On_Fire_strip_by_KC_Green.jpg"
     url_imgflip: "https://i.imgflip.com/1d6t4m.jpg"
 
@@ -44,154 +88,328 @@ memes:
     name: Drake Hotline Bling
     name_zh: 德雷克拒绝接受
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Rejecting one option, preferring another, binary choice comparison
     meaning_zh: 二选一对比，拒绝左边接受右边
-    triggers_en: "no yes|rather|prefer|choose|drake"
-    triggers_zh: "不要要|对比|选择|拒绝接受|二选一"
+    triggers_en:
+      - "no yes"
+      - "rather"
+      - "prefer"
+      - "choose"
+      - "drake"
+    triggers_zh:
+      - "不要要"
+      - "对比"
+      - "选择"
+      - "拒绝接受"
+      - "二选一"
     url_imgflip: "https://i.imgflip.com/30b1gx.jpg"
 
   - id: roll-safe
     name: Roll Safe
     name_zh: 拍头思考
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: A clever-sounding but actually terrible idea, ironic wisdom
     meaning_zh: 自以为聪明但其实很荒谬的推理
-    triggers_en: "can't fail|brilliant idea|think about it|clever"
-    triggers_zh: "聪明|天才|拍头|想到了|妙啊"
+    triggers_en:
+      - "can't fail"
+      - "brilliant idea"
+      - "think about it"
+      - "clever"
+    triggers_zh:
+      - "聪明"
+      - "天才"
+      - "拍头"
+      - "想到了"
+      - "妙啊"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/7/79/Roll_Safe_meme.jpg"
 
   - id: woman-yelling-cat
     name: Woman Yelling at Cat
     name_zh: 女人对猫大喊
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Dramatic argument, emotional overreaction, absurd confrontation
     meaning_zh: 激烈辩论、情绪化反应、荒谬的争执
-    triggers_en: "arguing|dramatic|confrontation|unbelievable|yelling"
-    triggers_zh: "激烈|辩论|争执|情绪化|大喊大叫"
+    triggers_en:
+      - "arguing"
+      - "dramatic"
+      - "confrontation"
+      - "unbelievable"
+      - "yelling"
+    triggers_zh:
+      - "激烈"
+      - "辩论"
+      - "争执"
+      - "情绪化"
+      - "大喊大叫"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/1/1f/WomanYellingAtACat_meme.jpg"
 
   - id: hide-pain-harold
     name: Hide the Pain Harold
     name_zh: 隐藏痛苦的哈罗德
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Smiling through pain, pretending everything is fine while suffering inside
     meaning_zh: 表面微笑但内心崩溃
-    triggers_en: "hiding pain|fake smile|suffering inside|pretending"
-    triggers_zh: "假装没事|微笑着崩溃|表面微笑|内心崩溃|痛苦"
+    triggers_en:
+      - "hiding pain"
+      - "fake smile"
+      - "suffering inside"
+      - "pretending"
+    triggers_zh:
+      - "假装没事"
+      - "微笑着崩溃"
+      - "表面微笑"
+      - "内心崩溃"
+      - "痛苦"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/a/a4/Hide_the_Pain_Harold_%28Andr%C3%A1s_Arat%C3%A1%29.jpg"
 
   - id: doge
     name: Doge
     name_zh: 狗狗表情
     lang: en|zh
-    category: general|programmer
-    tags: cn|global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
+      - general
     meaning: Confusion, surprise, innocent amazement, or ironic praise
     meaning_zh: 困惑、惊讶、可爱、反讽式赞美
-    triggers_en: "wow|such|much|very|doge|confused|amazed"
-    triggers_zh: "很多困惑|哇|狗狗|惊讶|可爱|无语"
+    triggers_en:
+      - "wow"
+      - "such"
+      - "much"
+      - "very"
+      - "doge"
+      - "confused"
+      - "amazed"
+    triggers_zh:
+      - "很多困惑"
+      - "哇"
+      - "狗狗"
+      - "惊讶"
+      - "可爱"
+      - "无语"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/5/5f/Original_Doge_meme.jpg"
 
   - id: expanding-brain
     name: Expanding Brain
     name_zh: 膨胀的大脑
     lang: en
-    category: general|programmer
-    tags: global|programmer|general
+    category:
+      - general
+      - programmer
+    tags:
+      - global
+      - programmer
+      - general
     meaning: Increasingly enlightened or absurd progression of ideas
     meaning_zh: 越来越"高级"但其实越来越离谱的递进
-    triggers_en: "galaxy brain|expanding mind|next level|progressive"
+    triggers_en:
+      - "galaxy brain"
+      - "expanding mind"
+      - "next level"
+      - "progressive"
     url_imgflip: "https://i.imgflip.com/1jwhww.jpg"
 
   - id: nyan-cat
     name: Nyan Cat
     name_zh: 彩虹猫
     lang: en|zh
-    category: general
-    tags: cn|global|general
+    category:
+      - general
+    tags:
+      - cn
+      - global
+      - general
     meaning: Pure joyful nonsense, cute and meaningless happiness
     meaning_zh: 无意义的快乐，卖萌，开心轻松
-    triggers_en: "nyan|cat|rainbow|cute|happy|fun"
-    triggers_zh: "彩虹猫|可爱|开心|卖萌|喵"
+    triggers_en:
+      - "nyan"
+      - "cat"
+      - "rainbow"
+      - "cute"
+      - "happy"
+      - "fun"
+    triggers_zh:
+      - "彩虹猫"
+      - "可爱"
+      - "开心"
+      - "卖萌"
+      - "喵"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/en/e/ed/Nyan_cat_250px_frame.PNG"
 
   - id: vim-exit
     name: How to Exit Vim
     name_zh: 怎么退出Vim
     lang: en|zh
-    category: programmer
-    tags: cn|global|programmer
+    category:
+      - programmer
+    tags:
+      - cn
+      - global
+      - programmer
     meaning: Being trapped and unable to escape, classic programmer joke
     meaning_zh: 被困住出不来，程序员经典笑话
-    triggers_en: "vim|exit vim|stuck|can't quit|how to exit"
-    triggers_zh: "退出Vim|被困住|出不来了|怎么退出|Vim"
+    triggers_en:
+      - "vim"
+      - "exit vim"
+      - "stuck"
+      - "can't quit"
+      - "how to exit"
+    triggers_zh:
+      - "退出Vim"
+      - "被困住"
+      - "出不来了"
+      - "怎么退出"
+      - "Vim"
     url_wikipedia: "https://upload.wikimedia.org/wikipedia/commons/8/8a/How_do_I_exit_Vim_Stack_Overflow.png"
 
   - id: it-works-why
     name: It Works Why
     name_zh: 能跑就行别问为什么
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Code works but nobody knows why, don't touch it
     meaning_zh: 代码能跑但没人知道为什么，别碰它
-    triggers_en: "it works|don't touch it|no idea why|works on my machine"
-    triggers_zh: "能跑就行|别动|不知道为什么|在我机器上是好的"
+    triggers_en:
+      - "it works"
+      - "don't touch it"
+      - "no idea why"
+      - "works on my machine"
+    triggers_zh:
+      - "能跑就行"
+      - "别动"
+      - "不知道为什么"
+      - "在我机器上是好的"
     url_imgflip: "https://i.imgflip.com/2hg8ef.jpg"
 
   - id: wtf-per-minute
     name: WTFs Per Minute
     name_zh: 每分钟WTF数
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Code quality measured by how many WTFs per minute it generates
     meaning_zh: 代码质量用每分钟骂几次来衡量
-    triggers_en: "wtf|code quality|bad code|legacy code"
-    triggers_zh: "什么鬼|垃圾代码|屎山|祖传代码"
+    triggers_en:
+      - "wtf"
+      - "code quality"
+      - "bad code"
+      - "legacy code"
+    triggers_zh:
+      - "什么鬼"
+      - "垃圾代码"
+      - "屎山"
+      - "祖传代码"
     url_imgflip: "https://i.imgflip.com/261am.jpg"
 
   - id: code-review-guy
     name: Code Review Guy
     name_zh: 代码审查狂人
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Someone who is overly strict or nitpicky during code review
     meaning_zh: 代码审查时极其严格或吹毛求疵的人
-    triggers_en: "code review|nitpick|requested changes|LGTM rejected"
-    triggers_zh: "代码审查|挑刺|打回去|改了又改|LGTM不了"
+    triggers_en:
+      - "code review"
+      - "nitpick"
+      - "requested changes"
+      - "LGTM rejected"
+    triggers_zh:
+      - "代码审查"
+      - "挑刺"
+      - "打回去"
+      - "改了又改"
+      - "LGTM不了"
     url_imgflip: "https://i.imgflip.com/3lmzyx.jpg"
 
   - id: monday-deploy
     name: Monday Deploy
     name_zh: 周一部署
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Deploying on Monday is universally a terrible idea
     meaning_zh: 周五部署是大忌，周一也好不到哪去
-    triggers_en: "monday deploy|friday deploy|never deploy on|deploy day"
-    triggers_zh: "周一部署|周五部署|别部署|部署日"
+    triggers_en:
+      - "monday deploy"
+      - "friday deploy"
+      - "never deploy on"
+      - "deploy day"
+    triggers_zh:
+      - "周一部署"
+      - "周五部署"
+      - "别部署"
+      - "部署日"
     url_imgflip: "https://i.imgflip.com/3si2.jpg"
 
   - id: stackoverflow-copy
     name: Stack Overflow Copy
     name_zh: 复制粘贴工程师
     lang: en
-    category: programmer
-    tags: global|programmer
+    category:
+      - programmer
+    tags:
+      - global
+      - programmer
     meaning: Programming by copying code from Stack Overflow
     meaning_zh: 编程就是从 Stack Overflow 复制粘贴
-    triggers_en: "stackoverflow|copy paste|stackoverflow driven development"
-    triggers_zh: "复制粘贴|抄的|Stack Overflow|CV工程师"
+    triggers_en:
+      - "stackoverflow"
+      - "copy paste"
+      - "stackoverflow driven development"
+    triggers_zh:
+      - "复制粘贴"
+      - "抄的"
+      - "Stack Overflow"
+      - "CV工程师"
     url_imgflip: "https://i.imgflip.com/2otj8v.jpg"
 
