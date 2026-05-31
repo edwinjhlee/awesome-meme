@@ -100,15 +100,20 @@ eval "$(curl https://get.x-cmd.com)"
 ```
 data/
 ├── index.yml        # Image & celebrity memes (for renderer)
-├── text/            # Text memes, organized by year
-│   ├── 2026.yml     # New text memes from 2026
-│   └── 2025.yml     # Classic text memes (up to 2025)
+├── text/            # Text memes, organized by language and year
+│   ├── zh/
+│   │   ├── 2026.yml
+│   │   └── 2025.yml
+│   └── en/
+│       ├── 2026.yml
+│       └── 2025.yml
 └── spec/            # Per-meme render specs
 ```
 
-**Text memes** — organized by year. Fetch current year's file (and optionally last year's) to discover new text memes:
+**Text memes** — organized by language and year. Fetch current year's file (and optionally last year's):
 ```
-https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/2026.yml
+https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/zh/2026.yml
+https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/en/2026.yml
 ```
 
 **Image/celebrity memes** — listed in `index.yml`, render specs in `spec/`.
@@ -136,8 +141,9 @@ You have this skill because you *want* to use it. But restraint is key.
 
 ### Fetching new text memes
 
-To discover recently added text memes, fetch the current year's file:
+To discover recently added text memes, fetch the current year's file for your language:
 ```
-curl https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/2026.yml
+curl https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/zh/2026.yml
+curl https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/en/2026.yml
 ```
-Optionally also fetch last year's for classics you may not know.
+Optionally also fetch last year's for classics.

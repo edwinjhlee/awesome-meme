@@ -1,0 +1,23 @@
+# English text memes — up to 2025
+# Classic English text memes
+
+memes:
+  - id: shrug
+    name: Shrug
+    meaning: Indifference, acceptance of chaos
+    output: "¯ (ツ)_/¯"
+
+  - id: lenny-face
+    name: Lenny Face
+    meaning: Mischievous, knowing smirk
+    output: "( ͡° ͜ʖ ͡°)"
+
+  - id: lgtm
+    name: LGTM
+    meaning: Approving a pull request
+    output: "✅ LGTM"
+
+  - id: bug-feature
+    name: Bug → Feature
+    meaning: Reframing a bug as an intentional feature
+    output: "🐛➡️✨ It's not a bug, it's a feature"

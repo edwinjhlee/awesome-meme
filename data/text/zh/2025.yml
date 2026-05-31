@@ -1,0 +1,38 @@
+# 中文文本梗 — 至2025
+# Classic Chinese text memes
+
+memes:
+  - id: table-flip
+    name: 掀桌
+    meaning: 崩溃到掀桌，忍无可忍
+    output: "(╯°□°）╯︵ ┻━┻"
+
+  - id: table-unflip
+    name: 把桌子扶好
+    meaning: 冷静了，把桌子扶好
+    output: "┬─┬ ノ( ゜-゜ノ)"
+
+  - id: look-of-disapproval
+    name: 不赞同的眼神
+    meaning: 不赞同、失望、鄙视
+    output: "ಠ_ಠ"
+
+  - id: panda-head-cry
+    name: 熊猫头流泪
+    meaning: 表面坚强，内心崩溃
+    output: "😭 假装没事"
+
+  - id: panda-head-doge
+    name: 熊猫头狗头
+    meaning: 阴阳怪气，讽刺调侃
+    output: "🐶 你说得对（狗头）"
+
+  - id: panda-head-work
+    name: 熊猫头加班
+    meaning: 加班到麻木，社畜日常
+    output: "🐼 加班使我快乐（不是"
+
+  - id: programmer-drink
+    name: 程序员喝茶
+    meaning: 淡定喝茶看戏，佛系程序员
+    output: "🍵 佛系喝茶，Bug 随它去吧"

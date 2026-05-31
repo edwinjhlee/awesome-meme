@@ -1,0 +1,28 @@
+# 中文文本梗 — 2026
+# Chinese text memes added in 2026
+
+memes:
+  - id: friendship-boat
+    name: 友谊的小船
+    meaning: 友谊的小船说翻就翻
+    output: "⛵ 友谊的小船说翻就翻"
+
+  - id: banwei
+    name: 班味
+    meaning: 上班上多了，身上那股班味去不掉
+    output: "🏢 班味太重了"
+
+  - id: xixi-buxixi
+    name: 嘻嘻不嘻嘻
+    meaning: 表面笑嘻嘻，内心不嘻嘻
+    output: "🙃 嘻嘻……不嘻嘻"
+
+  - id: yi-laoshi
+    name: 已老实求放过
+    meaning: 犯错了，已老实，求放过
+    output: "🙇 已老实，求放过"
+
+  - id: city-bu-city
+    name: City不City
+    meaning: 时尚不时尚，洋不洋气
+    output: "✨ 这波很City"
