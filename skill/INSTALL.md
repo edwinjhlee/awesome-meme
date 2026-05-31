@@ -46,11 +46,34 @@ apt install imagemagick    # Debian/Ubuntu
 dnf install imagemagick    # Fedora
 ```
 
-## Font
+## Fonts
 
-Impact is recommended (classic meme font).
+### Impact (classic meme font)
 
-- macOS: `/System/Library/Fonts/Supplemental/Impact.ttf` (pre-installed)
-- Linux: `ttf-mscorefonts-installer` or Google Fonts Anton/Bangers
-- Windows: `C:\Windows\Fonts\impact.ttf` (pre-installed)
-- Chinese: Noto Sans CJK (思源黑体)
+- **macOS**: `/System/Library/Fonts/Supplemental/Impact.ttf` (pre-installed)
+- **Windows**: `C:\Windows\Fonts\impact.ttf` (pre-installed)
+- **Linux (Debian/Ubuntu)**: `sudo apt install ttf-mscorefonts-installer`
+- **Linux (Fedora)**: `sudo dnf install ms-core-impact-fonts`
+- **Note**: Impact is a Microsoft Core Font — free to use and distribute, but not open source
+
+### CJK / Chinese fonts (required for Chinese text)
+
+Impact has no CJK glyphs — Chinese text renders invisible with Impact. The renderer auto-detects CJK and falls back to system CJK fonts:
+
+- **macOS**: PingFang (苹方) — pre-installed
+- **Linux**: Noto Sans CJK — `sudo apt install fonts-noto-cjk` (Debian/Ubuntu) or `sudo dnf install google-noto-sans-cjk-fonts` (Fedora)
+
+### Open-source alternatives to Impact
+
+If you prefer fully open-source fonts:
+
+- **Anton** (Google Fonts) — very similar to Impact, great for memes
+- **Bangers** (Google Fonts) — comic/meme style, slightly rounder
+
+Install from [Google Fonts](https://fonts.google.com):
+```bash
+# Download Anton
+mkdir -p ~/.local/share/fonts
+curl -L "https://github.com/google/fonts/raw/main/ofl/anton/Anton-Regular.ttf" -o ~/.local/share/fonts/Anton-Regular.ttf
+fc-cache -f
+```
