@@ -11,7 +11,10 @@ import tempfile
 import yaml
 from PIL import Image, ImageDraw, ImageFont
 
-GITHUB_RAW = "https://codeberg.org/edwinjhlee/awesome-meme/raw/branch/main"
+RAW_MIRRORS = [
+    "https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main",
+    "https://codeberg.org/edwinjhlee/awesome-meme/raw/branch/main",
+]
 
 
 def _resolve_template(template_arg):
@@ -19,15 +22,18 @@ def _resolve_template(template_arg):
     if os.path.isfile(template_arg):
         with open(template_arg) as f:
             return yaml.safe_load(f)
-    # Treat as meme ID, download from GitHub
     meme_id = template_arg.replace("_", "-")
-    url = f"{GITHUB_RAW}/data/spec/{meme_id}.yml"
-    print(f"Downloading spec: {url}")
-    r = subprocess.run(["curl", "-sL", url], capture_output=True, text=True, timeout=10)
-    if r.returncode != 0 or not r.stdout.strip():
-        print(f"Error: template '{meme_id}' not found", file=sys.stderr)
-        sys.exit(1)
-    return yaml.safe_load(r.stdout)
+    for base in RAW_MIRRORS:
+        url = f"{base}/data/spec/{meme_id}.yml"
+        print(f"Trying: {url}")
+        r = subprocess.run(["curl", "-sL", "--max-time", "8", url],
+                           capture_output=True, text=True, timeout=15)
+        if r.returncode == 0 and r.stdout.strip() and not r.stdout.startswith("Not found"):
+            data = yaml.safe_load(r.stdout)
+            if isinstance(data, dict):
+                return data
+    print(f"Error: template '{meme_id}' not found on any mirror", file=sys.stderr)
+    sys.exit(1)
 
 
 def download_image(urls, dest):
