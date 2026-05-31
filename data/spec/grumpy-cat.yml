@@ -1,0 +1,26 @@
+id: grumpy-cat
+image_size: [600, 450]
+urls:
+  - "https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Grumpy_Cat_-_Meme_Image.jpg/600px-Grumpy_Cat_-_Meme_Image.jpg"
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text on Grumpy Cat"
+    slots:
+      - id: top
+        role: "setup"
+        role_zh: "前提"
+        pos: [300, 40]
+      - id: bottom
+        role: "grumpy response"
+        role_zh: "不爽回应"
+        pos: [300, 410]
+example:
+  texts: ["I TRIED TO BE NICE", "IT WAS AWFUL"]

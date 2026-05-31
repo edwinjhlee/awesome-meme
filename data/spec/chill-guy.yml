@@ -1,0 +1,25 @@
+id: chill-guy
+image_size: [600, 450]
+urls: []
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Text overlay on Chill Guy"
+    slots:
+      - id: top
+        role: "situation"
+        role_zh: "场景"
+        pos: [300, 40]
+      - id: bottom
+        role: "chill reaction"
+        role_zh: "淡定反应"
+        pos: [300, 410]
+example:
+  texts: ["PRODUCTION IS DOWN", "IT IS WHAT IT IS"]

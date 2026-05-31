@@ -139,3 +139,33 @@ memes:
     type: celebrity
     meaning: Playful insult, from Stephen Chow movie
     meaning_zh: 周星驰电影台词，玩笑式吐槽
+
+  # --- more classics ---
+
+  - id: one-does-not-simply
+    name: One Does Not Simply
+    name_zh: 不能简单地
+    type: image
+    meaning: Highlighting the difficulty or absurdity of a task
+    meaning_zh: 某事没那么简单，经典LOTR梗
+
+  - id: change-my-mind
+    name: Change My Mind
+    name_zh: 改变我的想法
+    type: image
+    meaning: Stating a controversial opinion, inviting debate
+    meaning_zh: 抛出一个观点，等你来辩
+
+  - id: grumpy-cat
+    name: Grumpy Cat
+    name_zh: 不爽猫
+    type: image
+    meaning: Perpetual displeasure, crankiness
+    meaning_zh: 永远不爽，看什么都不顺眼
+
+  - id: chill-guy
+    name: Chill Guy
+    name_zh: 淡定狗
+    type: image
+    meaning: Staying calm under pressure, unbothered
+    meaning_zh: 压力再大也很淡定，2024全球爆火

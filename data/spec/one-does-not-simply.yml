@@ -1,0 +1,26 @@
+id: one-does-not-simply
+image_size: [600, 450]
+urls:
+  - "https://upload.wikimedia.org/wikipedia/en/b/bc/One_does_not_simply_boromir.jpg"
+font:
+  family: Impact
+  size: 36
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: top-bottom
+    default: true
+    desc: "Classic top/bottom text on Boromir"
+    slots:
+      - id: top
+        role: "One does not simply..."
+        role_zh: "不能简单地"
+        pos: [300, 30]
+      - id: bottom
+        role: "punchline"
+        role_zh: "补充说明"
+        pos: [300, 420]
+example:
+  texts: ["ONE DOES NOT SIMPLY", "DEBUG ON FRIDAY"]

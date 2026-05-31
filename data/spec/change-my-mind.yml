@@ -1,0 +1,22 @@
+id: change-my-mind
+image_size: [600, 450]
+urls:
+  - "https://upload.wikimedia.org/wikipedia/en/7/7e/Change_My_Mind_sign.jpg"
+font:
+  family: Impact
+  size: 28
+  color: white
+  stroke_color: black
+  stroke_width: 2
+  anchor: mm
+layouts:
+  - id: sign-text
+    default: true
+    desc: "Replace text on the sign"
+    slots:
+      - id: sign
+        role: "opinion on the sign"
+        role_zh: "牌子上的观点"
+        pos: [300, 310]
+example:
+  texts: ["TABS > SPACES"]
