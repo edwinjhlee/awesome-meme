@@ -11,7 +11,7 @@ import tempfile
 import yaml
 from PIL import Image, ImageDraw, ImageFont
 
-GITHUB_RAW = "https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main"
+GITHUB_RAW = "https://codeberg.org/edwinjhlee/awesome-meme/raw/branch/main"
 
 
 def _resolve_template(template_arg):
