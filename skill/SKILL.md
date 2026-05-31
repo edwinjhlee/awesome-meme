@@ -58,6 +58,8 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 
 → See [PILLOW.md](PILLOW.md) for programmatic usage and coordinate system.
 
+> **CJK / Chinese text:** Impact font has no CJK glyphs — Chinese text will render invisible. The renderer auto-detects CJK and falls back to PingFang/Noto Sans CJK. See [PILLOW.md](PILLOW.md#font-notes) for details.
+
 **ImageMagick** — Shell, no Python needed:
 
 ```bash
