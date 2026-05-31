@@ -1,5 +1,7 @@
 # Contributing to awesome-meme
 
+> Also available: [Code of Conduct](CODE_OF_CONDUCT.md) | [Security](SECURITY.md) | [License](LICENSE) | [README](README.md)
+
 Help us grow the meme collection! This repo stores YAML metadata and a renderer — no images.
 
 ## Quick Add (3 steps)

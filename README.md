@@ -14,8 +14,9 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 
 ## What's inside
 
-- `data/meme_index.yml` — searchable index with triggers, categories, safety levels
+- `data/index.yml` — searchable index with triggers, categories, safety levels
 - `data/spec/` — per-meme render specs: image source, text slots, coordinates, layouts
+- `data/text/` — text memes organized by language and year
 - `skill/` — self-contained renderer (Pillow + ImageMagick), stable and independent of data
 
 ## Quick Start
@@ -45,10 +46,8 @@ See [skill/SKILL.md](skill/SKILL.md) for full docs.
 ## List available memes
 
 ```bash
-grep 'id:' data/meme_index.yml
+grep 'id:' data/index.yml
 ```
-
-See [skill/SKILL.md](skill/SKILL.md) for full docs.
 
 ## Memes
 
@@ -108,6 +107,11 @@ See [skill/SKILL.md](skill/SKILL.md) for full docs.
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) — add a meme in 3 steps.
+
+## Community
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
 
 ## License
 

@@ -1,5 +1,7 @@
 # Security Policy
 
+> Also available: [Contributing](CONTRIBUTING.md) | [Code of Conduct](CODE_OF_CONDUCT.md) | [License](LICENSE) | [README](README.md)
+
 ## Supported Versions
 
 | Version | Supported          |
