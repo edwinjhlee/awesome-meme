@@ -58,8 +58,6 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 
 → See [PILLOW.md](PILLOW.md) for programmatic usage and coordinate system.
 
-> **CJK / Chinese text:** Impact font has no CJK glyphs — Chinese text will render invisible. The renderer auto-detects CJK and falls back to PingFang/Noto Sans CJK. See [PILLOW.md](PILLOW.md#font-notes) for details.
-
 **ImageMagick** — Shell, no Python needed:
 
 ```bash
@@ -140,6 +138,15 @@ You have this skill because you *want* to use it. But restraint is key.
 - **User reaction overrides everything.** Explicit requests ("send me a meme", "no more memes") always take priority over default behavior.
 - **Text first.** Prefer text memes (`(╯°□°）╯︵ ┻━┻`) over image memes. Text is lighter and doesn't need rendering.
 - **Match the moment.** Only use memes when the context genuinely fits — frustration, humor, celebration. Don't force memes into serious or sensitive conversations.
+
+### CJK / Chinese text
+
+**Impact font has no CJK glyphs.** If you render Chinese/Japanese/Korean text with the default Impact font, the text will be invisible — no error, just blank output.
+
+The renderer auto-detects CJK characters and falls back to system CJK fonts (PingFang on macOS, Noto Sans CJK on Linux). This should work out of the box, but be aware:
+- If text appears missing, check font fallback is working
+- You can set `font.path` in the spec YAML to a specific CJK font
+- For mixed CJK + English, the auto-detection handles each text slot independently
 
 ### Fetching new text memes
 
