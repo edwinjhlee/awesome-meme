@@ -1,12 +1,12 @@
 # Contributing to awesome-meme
 
-Help us reach 1000 meme specs! This repo stores YAML data only — no images.
+Help us grow the meme collection! This repo stores YAML metadata and a renderer — no images.
 
 ## Quick Add (3 steps)
 
 ### Step 1: Add to the index
 
-Edit `data/meme_index.yml`, append an entry:
+Edit `data/index.yml`, append an entry:
 
 ```yaml
   - id: your-meme-id
@@ -121,7 +121,7 @@ python3 skill/meme_render.py your-meme-id "TEXT1" "TEXT2"
 
 ## PR Checklist
 
-- [ ] `data/meme_index.yml` updated with new entry
+- [ ] `data/index.yml` updated with new entry
 - [ ] `data/spec/<meme-id>.yml` created with valid YAML
 - [ ] `example.texts` produces a funny/relevant test meme
 - [ ] Tested with `python3 skill/meme_render.py <meme-id> ...`
