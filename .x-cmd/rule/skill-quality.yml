@@ -149,3 +149,19 @@ skill-docs-cross-references:
   tldr:
   - wrong: "SKILL.md links to GUIDELINES.md but AGENTS.md doesn't list it"
     right: "All cross-references between SKILL.md, AGENTS.md, and sub-docs are consistent"
+
+data-index-spec-sync:
+  name: Index, spec files, and TSV must be in sync
+  apply: "data/"
+  level: error
+  desc:
+  - Every meme ID in data/index.yml must have a corresponding spec file in data/spec/{id}.yml.
+  - Every spec file in data/spec/ must have a matching entry in data/index.yml (except text-only memes which live in data/text/).
+  - data/index.tsv must be regenerated from data/index.yml (YML is source of truth).
+  - Text memes in data/text/{zh,en}/ should NOT appear in data/index.yml (they are a separate system).
+  - README.md meme table must reflect the current contents of data/index.yml and data/text/.
+  - CONTRIBUTING.md must reference correct file names (data/index.yml, not stale names).
+  - Spec file naming must use underscores (distracted_boyfriend.yml), matching the id field (which may use hyphens in index).
+  tldr:
+  - wrong: "13 spec files exist but have no index entry; index.tsv is outdated with only 20 entries"
+    right: "Every image meme has both index.yml entry and spec file; index.tsv is regenerated; README table is current"

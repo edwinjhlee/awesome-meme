@@ -140,6 +140,15 @@ memes:
     meaning: Playful insult, from Stephen Chow movie
     meaning_zh: 周星驰电影台词，玩笑式吐槽
 
+  # --- text-only (ASCII / text-on-image) ---
+
+  - id: bug-feature
+    name: "It's a Feature"
+    name_zh: 这是特性不是Bug
+    type: image
+    meaning: That's not a bug, it's a feature
+    meaning_zh: 这不是Bug，这是特性
+
   # --- more classics ---
 
   - id: one-does-not-simply
@@ -169,3 +178,82 @@ memes:
     type: image
     meaning: Staying calm under pressure, unbothered
     meaning_zh: 压力再大也很淡定，2024全球爆火
+
+  # --- text-on-image (ASCII / text-only renders) ---
+
+  - id: friendship-boat
+    name: Friendship Boat
+    name_zh: 友谊的小船
+    type: image
+    meaning: Friendship ending over a small thing
+    meaning_zh: 友谊的小船说翻就翻
+
+  - id: lenny-face
+    name: Lenny Face
+    name_zh: Lenny脸
+    type: image
+    meaning: Mischievous or suggestive expression
+    meaning_zh: 贼笑、暗示表情
+
+  - id: lgtm
+    name: LGTM
+    name_zh: 看起来不错
+    type: image
+    meaning: Code review approval
+    meaning_zh: 代码审查通过
+
+  - id: look-of-disapproval
+    name: Look of Disapproval
+    name_zh: 不赞同
+    type: image
+    meaning: Silent disapproval
+    meaning_zh: 无声的不赞同
+
+  - id: panda-head-cry
+    name: Panda Head Cry
+    name_zh: 熊猫头哭
+    type: image
+    meaning: Pretending to be fine but breaking inside
+    meaning_zh: 表面坚强内心崩溃
+
+  - id: panda-head-doge
+    name: Panda Head Doge
+    name_zh: 熊猫头狗头
+    type: image
+    meaning: Sarcastic agreement
+    meaning_zh: 阴阳怪气
+
+  - id: panda-head-work
+    name: Panda Head Work
+    name_zh: 熊猫头加班
+    type: image
+    meaning: Numb from overwork
+    meaning_zh: 加班到麻木
+
+  - id: programmer-drink
+    name: Programmer Drink
+    name_zh: 程序员喝茶
+    type: image
+    meaning: Zen programmer ignoring chaos
+    meaning_zh: 佛系程序员无视Bug
+
+  - id: shrug
+    name: Shrug
+    name_zh: 耸肩
+    type: image
+    meaning: Indifference, whatever
+    meaning_zh: 无所谓、随便
+
+  - id: table-flip
+    name: Table Flip
+    name_zh: 掀桌子
+    type: image
+    meaning: Extreme frustration
+    meaning_zh: 崩溃掀桌
+
+  - id: table-unflip
+    name: Table Unflip
+    name_zh: 放回桌子
+    type: image
+    meaning: Calming down after rage
+    meaning_zh: 冷静下来把桌子放回
