@@ -64,3 +64,42 @@ skill-get-the-skill-section:
   tldr:
   - wrong: "SKILL.md starts with Usage but no download instructions"
     right: "SKILL.md has Get the Skill section with git clone / curl / x-cmd options"
+
+skill-cjk-font-fallback:
+  name: CJK font fallback works on all platforms
+  apply: "skill/meme_render.py"
+  level: error
+  desc:
+  - The renderer must support CJK text on both macOS and Linux.
+  - CJK_FONT_PATHS must include Linux paths (e.g. /usr/share/fonts/opentype/noto/).
+  - Both Pillow and ImageMagick backends must handle CJK text (not just Pillow).
+  - If one backend lacks CJK support, document the limitation in SKILL.md.
+  tldr:
+  - wrong: "CJK_FONT_PATHS only has macOS paths; magick backend ignores CJK"
+    right: "Both platforms and both backends handle CJK text correctly"
+
+skill-docs-code-consistency:
+  name: Documentation matches actual code behavior
+  apply: "skill/"
+  level: error
+  desc:
+  - Default values in docs must match code (--layout default, --backend default, etc.).
+  - Referenced files must exist (e.g. meme_render.sh must exist if mentioned).
+  - Spec naming convention must be consistent (either all hyphens or all underscores, not mixed).
+  - AGENTS.md data paths must match actual directory structure.
+  tldr:
+  - wrong: "Docs say --layout defaults to chest-label but code defaults to None"
+    right: "Docs and code agree on all defaults and file paths"
+
+skill-font-selection-guide:
+  name: Font selection guide for callers
+  apply: "skill/SKILL.md"
+  level: warn
+  desc:
+  - SKILL.md must explain font behavior so callers (AI agents) can make informed decisions.
+  - Must cover: English (Impact/Anton), CJK (system fonts), mixed text handling.
+  - Must state clearly that Impact has no CJK glyphs — Chinese text will be invisible.
+  - Must explain auto-detection behavior and how to override via spec YAML.
+  tldr:
+  - wrong: "Font info buried in renderer docs, caller doesn't know about CJK issue"
+    right: "SKILL.md has font selection section visible to callers"

@@ -42,7 +42,7 @@ python3 meme_render.py /path/to/distracted_boyfriend.yml ZIG ME RUST
 | Option | Values | Default | Description |
 |--------|--------|---------|-------------|
 | `--backend` | pillow, magick | pillow | Rendering backend |
-| `--layout` | chest-label, above-head, bottom-label | chest-label | Text placement preset |
+| `--layout` | chest-label, above-head, bottom-label | (use spec default) | Text placement preset |
 | `--output` | file path | meme_output.jpg | Output file path |
 
 ---

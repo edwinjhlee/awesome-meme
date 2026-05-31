@@ -25,11 +25,19 @@ def _has_cjk(text):
 
 
 CJK_FONT_PATHS = [
+    # macOS
     "/System/Library/Fonts/PingFang.ttc",
     "/System/Library/Fonts/STHeiti Medium.ttc",
     "/System/Library/Fonts/STHeiti Light.ttc",
     "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
     "/Library/Fonts/Arial Unicode.ttf",
+    # Linux — Noto Sans CJK
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+    # Linux — WenQuanYi
+    "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+    "/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc",
 ]
 
 
@@ -127,13 +135,8 @@ def render_pillow(template, image_path, texts, layout_id, output):
 
 def render_magick(template, image_path, texts, layout_id, output):
     font_cfg = template["font"]
-    font_family = font_cfg.get("family", "Impact")
     font_size = font_cfg["size"]
     stroke_w = font_cfg.get("stroke_width", 4)
-    anchor = font_cfg.get("anchor", "mm")
-
-    # Convert center coords to ImageMagick left-baseline
-    # For anchor="mm": im_x = center_x - text_width/2, im_y = center_y + font_size*0.35
     ascent_offset = int(font_size * 0.35)
 
     layout = _get_layout(template, layout_id)
@@ -144,10 +147,16 @@ def render_magick(template, image_path, texts, layout_id, output):
     for i, slot in enumerate(slots):
         if i >= len(texts):
             break
+        text = texts[i]
         cx, cy = slot["pos"]
-        # Approximate: use center coords directly with -annotate +gravity
-        # Simpler: use -draw text with calculated offset
-        im_x = cx - len(texts[i]) * font_size // 4  # rough estimate
+        cjk = _has_cjk(text)
+        font_family = font_cfg.get("family", "Impact")
+        if cjk:
+            for p in CJK_FONT_PATHS:
+                if os.path.exists(p):
+                    font_family = p
+                    break
+        im_x = cx - len(text) * font_size // 4
         im_y = cy + ascent_offset
 
         cmd.extend([
@@ -156,7 +165,7 @@ def render_magick(template, image_path, texts, layout_id, output):
             "-fill", font_cfg.get("color", "white"),
             "-stroke", font_cfg.get("stroke_color", "black"),
             "-strokewidth", str(stroke_w),
-            "-draw", f"text {im_x},{im_y} '{texts[i]}'",
+            "-draw", f"text {im_x},{im_y} '{text}'",
         ])
 
     cmd.append(output)

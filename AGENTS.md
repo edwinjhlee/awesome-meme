@@ -11,9 +11,13 @@ awesome-meme/
 ├── AGENTS.md                   # This file — agent instructions
 ├── data/
 │   ├── index.yml               # Image & celebrity memes
-│   ├── text/                   # Text memes, organized by year
-│   │   ├── 2026.yml            # New text memes from 2026
-│   │   └── 2025.yml            # Classic text memes (up to 2025)
+│   ├── text/                   # Text memes, organized by language and year
+│   │   ├── zh/                 # Chinese text memes
+│   │   │   ├── 2026.yml
+│   │   │   └── 2025.yml
+│   │   └── en/                 # English text memes
+│   │       ├── 2026.yml
+│   │       └── 2025.yml
 │   └── spec/                   # Per-meme render specs
 ├── skill/                      # Self-contained renderer (stable, no data)
 │   ├── SKILL.md                # Entry point — usage, download, docs
@@ -36,13 +40,13 @@ awesome-meme/
 
 ## Data Structure
 
-- **data/text/*.yml** — text memes organized by year. Agents fetch current year (and optionally last year).
+- **data/text/{zh,en}/*.yml** — text memes organized by language and year. Agents fetch current year (and optionally last year).
 - **data/index.yml** — image and celebrity memes only
 - **data/spec/*.yml** — render specs for image/celebrity memes
 
 ## When Adding a New Meme
 
-1. **Text meme**: add to `data/text/{current_year}.yml` with id, name, meaning, output
+1. **Text meme**: add to `data/text/{lang}/{current_year}.yml` with id, name, meaning, output
 2. **Image/celebrity meme**: add to `data/index.yml` and create `data/spec/<meme_id>.yml`
 3. Test with `python3 skill/meme_render.py <meme-id> TEXT1 TEXT2`
 
