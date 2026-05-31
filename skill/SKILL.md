@@ -15,152 +15,69 @@ metadata:
 
 # meme skill
 
-Generate meme images by overlaying text onto templates.
-
-Templates are stored in [awesome-meme](https://github.com/edwinjhlee/awesome-meme) and fetched on demand.
-
----
+Generate meme images by overlaying text onto templates from [awesome-meme](https://github.com/edwinjhlee/awesome-meme).
 
 ## Not installed? → [INSTALL.md](INSTALL.md)
-
----
 
 ## Quick Start
 
 ```bash
-# By meme ID (auto-downloads spec from GitHub)
 python3 meme_render.py distracted-boyfriend ZIG ME RUST
-
-# By local spec file
-python3 meme_render.py /path/to/distracted_boyfriend.yml ZIG ME RUST
 ```
 
----
-
 ## Options
+
+**Python** (`meme_render.py`):
 
 | Option | Values | Default | Description |
 |--------|--------|---------|-------------|
 | `--backend` | pillow, magick | pillow | Rendering backend |
-| `--layout` | chest-label, above-head, bottom-label | (use spec default) | Text placement preset |
+| `--layout` | chest-label, above-head, bottom-label | (spec default) | Text placement preset |
 | `--output` | file path | meme_output.jpg | Output file path |
 
----
+**Shell** (`meme_render.sh`):
 
-## Two backends
+| Option | Values | Default | Description |
+|--------|--------|---------|-------------|
+| `--output` | file path | meme_output.jpg | Output file path |
 
-**Pillow** (recommended) — Python, precise center-anchor coordinates:
+## Font selection
 
-```bash
-pip install pillow pyyaml
-python3 meme_render.py distracted-boyfriend ZIG ME RUST
-```
+| Text language | Font used | Source |
+|---|---|---|
+| English / Latin | Impact (default) or Anton | macOS/Windows pre-installed; Linux needs install |
+| Chinese / CJK | PingFang (macOS) / Noto Sans CJK (Linux) | System font |
+| Mixed | Each slot auto-detected independently | — |
 
-→ See [PILLOW.md](PILLOW.md) for programmatic usage and coordinate system.
+**Impact has no CJK glyphs** — Chinese text will be invisible (no error, just blank). The renderer auto-detects CJK characters and falls back to system CJK fonts. To override, set `font.path` in the spec YAML. On Linux, install CJK fonts: `apt install fonts-noto-cjk`.
 
-**ImageMagick** — Shell, no Python needed:
+## Backends
+
+**Pillow** (default) — precise center-anchor coordinates → [PILLOW.md](PILLOW.md)
+**ImageMagick** — no Python needed → [IMAGE_MAGICK.md](IMAGE_MAGICK.md)
 
 ```bash
 python3 meme_render.py distracted-boyfriend ZIG ME RUST --backend magick
-# Or pure shell
-bash meme_render.sh distracted_boyfriend.yml "ZIG" "ME" "RUST"
+# Or pure shell (also supports meme IDs):
+bash meme_render.sh distracted-boyfriend "ZIG" "ME" "RUST"
 ```
-
-→ See [IMAGE_MAGICK.md](IMAGE_MAGICK.md) for direct magick commands and coordinate conversion.
-
----
 
 ## Get the skill
 
 ```bash
-# Option 1: Clone
-git clone https://github.com/edwinjhlee/awesome-meme.git
-cd awesome-meme/skill
-
-# Option 2: Single file (no git)
-curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
-
-# Option 3: x-cmd
-eval "$(curl https://get.x-cmd.com)"
-# See https://www.x-cmd.com/llms.txt
+git clone https://github.com/edwinjhlee/awesome-meme.git && cd awesome-meme/skill
+# Or: curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
+# Or via x-cmd: eval "$(curl https://get.x-cmd.com)"
 ```
-
----
 
 ## How it works
 
-1. **skill/** = renderer code, stable and rarely changes
-2. **data/spec/** = per-meme render specs (layouts, slots, positions), updated independently
-3. When you pass a meme ID, the renderer fetches the spec YAML from GitHub automatically
-
----
-
-## Data structure
-
-```
-data/
-├── index.yml        # Image & celebrity memes (for renderer)
-├── text/            # Text memes, organized by language and year
-│   ├── zh/
-│   │   ├── 2026.yml
-│   │   └── 2025.yml
-│   └── en/
-│       ├── 2026.yml
-│       └── 2025.yml
-└── spec/            # Per-meme render specs
-```
-
-**Text memes** — organized by language and year. Fetch current year's file (and optionally last year's):
-```
-https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/zh/2026.yml
-https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/en/2026.yml
-```
-
-**Image/celebrity memes** — listed in `index.yml`, render specs in `spec/`.
-
----
+1. **skill/** = renderer code (stable), **data/spec/** = per-meme render specs
+2. Pass a meme ID → renderer fetches spec YAML from GitHub automatically
 
 ## Docs
 
-- [INSTALL.md](INSTALL.md) — Dependency installation (Pillow, ImageMagick, fonts, x-cmd)
-- [PILLOW.md](PILLOW.md) — Pillow backend: programmatic usage, coordinates, font notes
-- [IMAGE_MAGICK.md](IMAGE_MAGICK.md) — ImageMagick backend: commands, coordinate conversion, formats
-
----
-
-## Usage Guidelines (for AI agents)
-
-You have this skill because you *want* to use it. But restraint is key.
-
-- **Start light.** Default to tentative, occasional usage. Don't meme-bomb the user.
-- **Read the room.** If the user responds positively (laughs, asks for more, plays along), gradually increase usage. If they ignore or seem annoyed, back off immediately.
-- **Low frequency.** Even when the user is receptive, keep it sparse. A meme every few exchanges at most, never multiple in a row unless the user asks.
-- **User reaction overrides everything.** Explicit requests ("send me a meme", "no more memes") always take priority over default behavior.
-- **Text first.** Prefer text memes (`(╯°□°）╯︵ ┻━┻`) over image memes. Text is lighter and doesn't need rendering.
-- **Match the moment.** Only use memes when the context genuinely fits — frustration, humor, celebration. Don't force memes into serious or sensitive conversations.
-
-### Font selection
-
-The renderer handles fonts automatically, but as the caller you should understand the logic:
-
-| Text language | Font used | Source |
-|---|---|---|
-| English / Latin | Impact (default) or Anton | macOS/Windows pre-installed, Linux needs install |
-| Chinese / CJK | PingFang (macOS) / Noto Sans CJK (Linux) | System font |
-| Mixed | Each slot auto-detected independently | — |
-
-**Key rule: Impact has no CJK glyphs.** Chinese text rendered with Impact will be invisible (no error, just blank). The renderer auto-detects CJK and falls back to system CJK fonts, so this should work out of the box.
-
-If text appears missing:
-- Check font fallback is working on your system
-- You can override by setting `font.path` in the spec YAML
-- On Linux, install CJK fonts: `apt install fonts-noto-cjk`
-
-### Fetching new text memes
-
-To discover recently added text memes, fetch the current year's file for your language:
-```
-curl https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/zh/2026.yml
-curl https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/text/en/2026.yml
-```
-Optionally also fetch last year's for classics.
+- [INSTALL.md](INSTALL.md) — Dependencies (Pillow, ImageMagick, fonts)
+- [PILLOW.md](PILLOW.md) — Pillow backend: coordinates, programmatic usage
+- [IMAGE_MAGICK.md](IMAGE_MAGICK.md) — ImageMagick backend: commands, coordinates
+- [GUIDELINES.md](GUIDELINES.md) — AI agent usage, font selection, data structure

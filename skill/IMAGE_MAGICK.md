@@ -24,7 +24,7 @@ python3 skill/meme_render.py distracted-boyfriend ZIG ME RUST --backend magick
 ### Via shell script
 
 ```bash
-bash skill/meme_render.sh distracted_boyfriend.yml "ZIG" "ME" "RUST"
+bash skill/meme_render.sh distracted-boyfriend "ZIG" "ME" "RUST"
 ```
 
 ### Direct magick command
@@ -63,3 +63,20 @@ magick input.jpg -quality 90 output.jpg      # JPEG
 magick input.jpg -quality 90 output.webp     # WebP (~58% smaller)
 magick input.jpg output.png                   # PNG
 ```
+
+## CJK text
+
+Impact has no CJK glyphs — Chinese/Japanese/Korean text will be invisible with Impact. The shell script auto-detects CJK characters and falls back to system CJK fonts:
+
+- **macOS**: PingFang, STHeiti
+- **Linux**: Noto Sans CJK, WenQuanYi Zen Hei
+
+If CJK text appears blank, install fonts:
+```bash
+# Debian/Ubuntu
+sudo apt install fonts-noto-cjk
+# Fedora
+sudo dnf install google-noto-sans-cjk-fonts
+```
+
+The script also resolves template filenames with either hyphens or underscores (e.g. `distracted-boyfriend.yml` finds `distracted_boyfriend.yml`).
