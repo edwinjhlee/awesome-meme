@@ -22,20 +22,30 @@ done
 
 GITHUB_BASE="https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/data/spec"
 
-# If not a local file, try fetching from GitHub by meme ID
+# If not a local file, try fetching from GitHub by meme ID (with hyphen/underscore variants)
 if [[ ! -f "$TEMPLATE" ]]; then
     ID="${TEMPLATE%.yml}"
-    LOCAL_CACHE="/tmp/_meme_spec_${ID}.yml"
-    if [[ -f "$LOCAL_CACHE" ]]; then
-        TEMPLATE="$LOCAL_CACHE"
-    else
-        URL="${GITHUB_BASE}/${ID}.yml"
-        if curl -sLf -o "$LOCAL_CACHE" "$URL" 2>/dev/null; then
-            TEMPLATE="$LOCAL_CACHE"
-        else
-            echo "Error: Cannot find template '${ID}' locally or on GitHub" >&2
-            exit 1
+    VARIANTS=("$ID")
+    ALT="${ID//-/_}"; [[ "$ALT" != "$ID" ]] && VARIANTS+=("$ALT")
+    ALT="${ID//_/-}"; [[ "$ALT" != "$ID" ]] && VARIANTS+=("$ALT")
+    FETCHED=""
+    for VID in "${VARIANTS[@]}"; do
+        LOCAL_CACHE="/tmp/_meme_spec_${VID}.yml"
+        if [[ -f "$LOCAL_CACHE" ]]; then
+            FETCHED="$LOCAL_CACHE"
+            break
         fi
+        URL="${GITHUB_BASE}/${VID}.yml"
+        if curl -sLf -o "$LOCAL_CACHE" "$URL" 2>/dev/null; then
+            FETCHED="$LOCAL_CACHE"
+            break
+        fi
+    done
+    if [[ -n "$FETCHED" ]]; then
+        TEMPLATE="$FETCHED"
+    else
+        echo "Error: Cannot find template '${ID}' locally or on GitHub" >&2
+        exit 1
     fi
 fi
 
@@ -81,10 +91,14 @@ has_cjk() {
 CJK_FONT_PATHS=(
     "/System/Library/Fonts/PingFang.ttc"
     "/System/Library/Fonts/STHeiti Medium.ttc"
+    "/System/Library/Fonts/STHeiti Light.ttc"
+    "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
+    "/Library/Fonts/Arial Unicode.ttf"
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
     "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc"
     "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc"
     "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"
+    "/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc"
 )
 
 find_cjk_font() {

@@ -19,14 +19,15 @@ skill-docs-split:
   apply: "skill/SKILL.md"
   level: error
   desc:
-  - SKILL.md must be concise: Get the Skill → Install → Usage → Options → How It Works → Doc links.
+  - SKILL.md must be concise (~80 lines max): Quick Start → Options → Font selection → Backends → Get the Skill → How It Works → Docs.
   - Detailed install instructions go in INSTALL.md.
   - Pillow-specific details go in PILLOW.md.
   - ImageMagick-specific details go in IMAGE_MAGICK.md.
+  - AI agent usage guidelines go in GUIDELINES.md.
   - SKILL.md links to these sub-docs, not inline all content.
   tldr:
-  - wrong: "SKILL.md contains full Pillow/ImageMagick docs inline (100+ lines)"
-    right: "SKILL.md has 50-60 lines with links to INSTALL.md, PILLOW.md, IMAGE_MAGICK.md"
+  - wrong: "SKILL.md contains full Pillow/ImageMagick/Guidelines docs inline (100+ lines)"
+    right: "SKILL.md is ~80 lines with links to INSTALL.md, PILLOW.md, IMAGE_MAGICK.md, GUIDELINES.md"
 
 skill-two-backends:
   name: Both Pillow and ImageMagick backends must be supported
@@ -36,11 +37,12 @@ skill-two-backends:
   - meme_render.py must support --backend pillow (default) and --backend magick.
   - meme_render.sh provides the shell/ImageMagick backend.
   - Both backends must handle the same template YAML format and produce consistent output.
-  - Coordinate conversion between Pillow (center/mm) and ImageMagick (left-baseline) must be correct.
+  - Both backends must correctly parse nested YAML: font config under `font:` key, slots under `layouts:` → `slots:`.
   - Both backends must handle CJK text with font fallback.
+  - The shell script must NOT use simple `grep "^key:"` for nested YAML — use sed/awk to parse blocks.
   tldr:
-  - wrong: "Only Pillow supported, or magick backend broken"
-    right: "Both backends produce correct output from the same template"
+  - wrong: "Only Pillow supported, or shell script ignores nested YAML font/slot config"
+    right: "Both backends parse the same template YAML correctly and produce consistent output"
 
 skill-meme-id-fetch:
   name: Renderer supports meme ID auto-fetch from GitHub
@@ -53,7 +55,7 @@ skill-meme-id-fetch:
   - Both scripts must try hyphen and underscore variants of the meme ID.
   tldr:
   - wrong: "Only accepts local file paths"
-    right: "meme_render.py distracted-boyfriend TEXT1 TEXT2 and meme_render.sh distracted-boyfriend TEXT1 TEXT2 both work"
+    right: "meme_render.py distracted-boyfriend TEXT and meme_render.sh distracted-boyfriend TEXT both work"
 
 skill-get-the-skill-section:
   name: SKILL.md explains how to download the skill
@@ -68,17 +70,18 @@ skill-get-the-skill-section:
     right: "SKILL.md has Get the Skill section with git clone / curl / x-cmd options"
 
 skill-cjk-font-fallback:
-  name: CJK font fallback works on all platforms
-  apply: "skill/meme_render.py"
+  name: CJK font fallback works on all platforms and both backends
+  apply: "skill/meme_render.py, skill/meme_render.sh"
   level: error
   desc:
-  - The renderer must support CJK text on both macOS and Linux.
-  - CJK_FONT_PATHS must include Linux paths (e.g. /usr/share/fonts/opentype/noto/).
+  - Both meme_render.py and meme_render.sh must have CJK_FONT_PATHS with both macOS and Linux paths.
+  - CJK_FONT_PATHS in the shell script must include the same Linux paths as the Python script (Noto Sans CJK, WenQuanYi).
   - Both Pillow and ImageMagick backends must handle CJK text (not just Pillow).
   - If one backend lacks CJK support, document the limitation in SKILL.md.
+  - Both scripts must have a _has_cjk / has_cjk function that checks CJK Unicode ranges.
   tldr:
-  - wrong: "CJK_FONT_PATHS only has macOS paths; magick backend ignores CJK"
-    right: "Both platforms and both backends handle CJK text correctly"
+  - wrong: "CJK_FONT_PATHS only has macOS paths; shell script missing CJK detection"
+    right: "Both platforms and both backends (Python + Shell) handle CJK text correctly"
 
 skill-docs-code-consistency:
   name: Documentation matches actual code behavior
@@ -88,10 +91,12 @@ skill-docs-code-consistency:
   - Default values in docs must match code (--layout default, --backend default, etc.).
   - Referenced files must exist (e.g. meme_render.sh must exist if mentioned).
   - Spec naming convention must be consistent (either all hyphens or all underscores, not mixed).
-  - AGENTS.md data paths must match actual directory structure.
+  - AGENTS.md data paths must match actual directory structure (data/text/{zh,en}/ not data/text/).
+  - Options tables must match what the scripts actually parse (no documenting unsupported flags).
+  - Usage comments in scripts must match actual argument parsing.
   tldr:
   - wrong: "Docs say --layout defaults to chest-label but code defaults to None"
-    right: "Docs and code agree on all defaults and file paths"
+    right: "Docs and code agree on all defaults, file paths, and supported options"
 
 skill-font-selection-guide:
   name: Font selection guide for callers
@@ -117,3 +122,30 @@ skill-spec-naming:
   tldr:
   - wrong: "Mix of distracted-boyfriend.yml and distracted_boyfriend.yml in spec/"
     right: "All spec files use underscores: distracted_boyfriend.yml"
+
+skill-yaml-parse-correctness:
+  name: Shell script correctly parses nested YAML
+  apply: "skill/meme_render.sh"
+  level: error
+  desc:
+  - The shell script must correctly parse the spec YAML format.
+  - Font config is nested under `font:` key — reading `family:` requires parsing the font block, not grepping top-level.
+  - Slot positions are under `layouts:` → first layout → `slots:` → `- pos: [x, y]`.
+  - Using `grep "^key:"` at top level will miss all nested keys — use `sed -n '/^font:/,/^[^ ]/p'` or awk.
+  - Test: verify the shell script reads font size and slot positions from a real spec file correctly.
+  tldr:
+  - wrong: "Shell script uses grep '^family:' which misses indented nested keys"
+    right: "Shell script uses sed/awk to correctly parse font block and layout/slot positions"
+
+skill-docs-cross-references:
+  name: All doc cross-references are valid
+  apply: "skill/"
+  level: warn
+  desc:
+  - Every doc file linked from SKILL.md must exist in skill/ directory.
+  - If GUIDELINES.md exists, SKILL.md must link to it in the Docs section.
+  - If GUIDELINES.md exists, AGENTS.md must mention it in the architecture tree.
+  - No broken or stale links between docs.
+  tldr:
+  - wrong: "SKILL.md links to GUIDELINES.md but AGENTS.md doesn't list it"
+    right: "All cross-references between SKILL.md, AGENTS.md, and sub-docs are consistent"

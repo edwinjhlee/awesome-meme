@@ -1,6 +1,6 @@
 # meme_render.py
 # Meme text overlay tool — supports Pillow and ImageMagick backends
-# Usage: python3 meme_render.py <template.yml> TEXT1 TEXT2 TEXT3 [--layout chest-label] [--backend pillow|magick] [--output out.jpg]
+# Usage: python3 meme_render.py <template.yml|meme-id> TEXT1 TEXT2 TEXT3 [--layout chest-label] [--backend pillow|magick] [--output out.jpg]
 
 import argparse
 import os

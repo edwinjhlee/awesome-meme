@@ -15,7 +15,7 @@ metadata:
 
 # meme skill
 
-Generate meme images by overlaying text onto templates from [awesome-meme](https://github.com/edwinjhlee/awesome-meme).
+Generate meme images by overlaying text onto templates from [awesome-meme](https://github.com/edwinjhlee/awesome-meme). Pass a meme ID and the renderer fetches the spec YAML from GitHub automatically.
 
 ## Not installed? → [INSTALL.md](INSTALL.md)
 
@@ -69,11 +69,6 @@ git clone https://github.com/edwinjhlee/awesome-meme.git && cd awesome-meme/skil
 # Or: curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
 # Or via x-cmd: eval "$(curl https://get.x-cmd.com)"
 ```
-
-## How it works
-
-1. **skill/** = renderer code (stable), **data/spec/** = per-meme render specs
-2. Pass a meme ID → renderer fetches spec YAML from GitHub automatically
 
 ## Docs
 
