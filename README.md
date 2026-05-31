@@ -1,6 +1,6 @@
 # awesome-meme
 
-> Make your AI agent tell memes. A curated collection of 27 meme render specs, growing with community contributions.
+> An AI skill that makes your agent funnier — 30 meme templates, one command to generate. Install, and your AI can meme.
 
 ## Why
 
