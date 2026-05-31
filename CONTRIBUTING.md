@@ -8,45 +8,33 @@ Help us grow the meme collection! This repo stores YAML metadata and a renderer 
 
 ### Step 1: Add to the index
 
-Edit `data/index.yml`, append an entry:
+Edit `data/index.yml`, append an entry under `memes:`:
 
 ```yaml
   - id: your-meme-id
     name: Your Meme Name
     name_zh: 中文名
-    lang: en|zh
-    category: programmer|general
+    type: image
     meaning: One-line description of the meme's meaning
     meaning_zh: 一句话描述这个梗的含义
-    triggers_en: keyword1|keyword2|keyword3
-    triggers_zh: 关键词1|关键词2
-    url_wikipedia: https://upload.wikimedia.org/...
-    safety: P1
-    alt: Description of the meme image for accessibility
 ```
 
 **Field reference:**
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `id` | yes | kebab-case identifier, must match spec filename |
+| `id` | yes | kebab-case identifier (e.g. `distracted-boyfriend`) |
 | `name` | yes | English name |
 | `name_zh` | no | Chinese name |
-| `lang` | yes | `en`, `zh`, or `en\|zh` |
-| `category` | yes | `programmer`, `general`, or both (`\|` separated) |
+| `type` | yes | `image` or `celebrity` |
 | `meaning` | yes | What the meme expresses |
-| `meaning_zh` | if lang has zh | Chinese meaning |
-| `triggers_en` | if lang has en | Pipe-separated trigger words for matching |
-| `triggers_zh` | if lang has zh | Chinese trigger words |
-| `url_wikipedia` | preferred | Wikipedia/Wikimedia image URL |
-| `url_imgflip` | optional | imgflip template URL as fallback |
-| `url_moegirl` | optional | Chinese wiki source |
-| `safety` | yes | P0 (text), P1 (image links), P2 (celebrity ≤20%) |
-| `alt` | yes | Accessibility description of the image |
+| `meaning_zh` | no | Chinese meaning |
+
+Note: Text/ASCII memes (e.g. `(╯°□°）╯︵ ┻━┻`) go in `data/text/{zh,en}/{year}.yml`, not in index.yml.
 
 ### Step 2: Create a render spec
 
-Create `data/spec/your-meme-id.yml`:
+Create `data/spec/your_meme_id.yml` (use underscores in filename):
 
 ```yaml
 id: your-meme-id
@@ -78,13 +66,14 @@ example:
   texts: ["Top text example", "Bottom text example"]
 ```
 
+**Naming:** spec files use underscores (`distracted_boyfriend.yml`), index IDs use hyphens (`distracted-boyfriend`). The renderer auto-resolves both.
+
 **Layout types:**
 
 - `top-bottom` — classic meme, text above and below image
 - `reject-accept` — two-panel (like Drake), reject on top, accept on bottom
 - `four-panel` — progressive (like Expanding Brain), 4 slots
 - `chest-label` — labels on characters (like Distracted Boyfriend)
-- `text-only` — no image needed, ASCII art or pure text
 
 **Coordinate tips:**
 - Positions are center coordinates (`anchor: mm`)
@@ -93,26 +82,24 @@ example:
 - Bottom text: ~85-90% from top edge
 - Use `identify image.jpg` or `sips -g pixelWidth -g pixelHeight image.jpg` to get dimensions
 
+**CJK text:** Impact has no CJK glyphs — Chinese text will be invisible. The renderer auto-detects CJK and falls back to system fonts (PingFang/Noto Sans CJK). See [skill/SKILL.md](skill/SKILL.md) for details.
+
 ### Step 3: Test and submit
 
 ```bash
-# Test locally
+# Test locally (renderer auto-fetches spec + image)
 python3 skill/meme_render.py your-meme-id "TEXT1" "TEXT2"
 
 # Verify the output looks good, then submit a PR
 ```
 
-## Safety Guidelines
+### Step 3b: Regenerate TSV
 
-| Level | Description | Examples |
-|-------|-------------|---------|
-| **P0** | Text/ASCII only, no image | Table Flip, Shrug, LGTM |
-| **P1** | External image links | Drake, This is Fine, Success Kid |
-| **P2** | Celebrity or media content | 真香, 葛优躺 |
+After editing `data/index.yml`, regenerate the TSV:
 
-- P2 entries must stay ≤20% of total
-- No NSFW content
-- No hateful or discriminatory memes
+```bash
+bash .x-cmd/yml2tsv
+```
 
 ## URL Guidelines
 
@@ -124,11 +111,11 @@ python3 skill/meme_render.py your-meme-id "TEXT1" "TEXT2"
 ## PR Checklist
 
 - [ ] `data/index.yml` updated with new entry
-- [ ] `data/spec/<meme-id>.yml` created with valid YAML
+- [ ] `data/spec/your_meme_id.yml` created with valid YAML (underscores in filename)
+- [ ] `data/index.tsv` regenerated via `.x-cmd/yml2tsv`
 - [ ] `example.texts` produces a funny/relevant test meme
 - [ ] Tested with `python3 skill/meme_render.py <meme-id> ...`
 - [ ] No images committed to repo
-- [ ] Safety level correctly assigned
 
 ## Reporting Issues
 
