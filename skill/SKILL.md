@@ -139,14 +139,22 @@ You have this skill because you *want* to use it. But restraint is key.
 - **Text first.** Prefer text memes (`(╯°□°）╯︵ ┻━┻`) over image memes. Text is lighter and doesn't need rendering.
 - **Match the moment.** Only use memes when the context genuinely fits — frustration, humor, celebration. Don't force memes into serious or sensitive conversations.
 
-### CJK / Chinese text
+### Font selection
 
-**Impact font has no CJK glyphs.** If you render Chinese/Japanese/Korean text with the default Impact font, the text will be invisible — no error, just blank output.
+The renderer handles fonts automatically, but as the caller you should understand the logic:
 
-The renderer auto-detects CJK characters and falls back to system CJK fonts (PingFang on macOS, Noto Sans CJK on Linux). This should work out of the box, but be aware:
-- If text appears missing, check font fallback is working
-- You can set `font.path` in the spec YAML to a specific CJK font
-- For mixed CJK + English, the auto-detection handles each text slot independently
+| Text language | Font used | Source |
+|---|---|---|
+| English / Latin | Impact (default) or Anton | macOS/Windows pre-installed, Linux needs install |
+| Chinese / CJK | PingFang (macOS) / Noto Sans CJK (Linux) | System font |
+| Mixed | Each slot auto-detected independently | — |
+
+**Key rule: Impact has no CJK glyphs.** Chinese text rendered with Impact will be invisible (no error, just blank). The renderer auto-detects CJK and falls back to system CJK fonts, so this should work out of the box.
+
+If text appears missing:
+- Check font fallback is working on your system
+- You can override by setting `font.path` in the spec YAML
+- On Linux, install CJK fonts: `apt install fonts-noto-cjk`
 
 ### Fetching new text memes
 
