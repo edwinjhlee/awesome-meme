@@ -7,9 +7,46 @@ import os
 import subprocess
 import sys
 import tempfile
+import unicodedata
 
 import yaml
 from PIL import Image, ImageDraw, ImageFont
+
+
+def _has_cjk(text):
+    for ch in text:
+        cp = ord(ch)
+        if (0x4E00 <= cp <= 0x9FFF or 0x3400 <= cp <= 0x4DBF or
+                0x2E80 <= cp <= 0x2EFF or 0x3000 <= cp <= 0x303F or
+                0xF900 <= cp <= 0xFAFF or 0xFF00 <= cp <= 0xFFEF or
+                0x2F800 <= cp <= 0x2FA1F):
+            return True
+    return False
+
+
+CJK_FONT_PATHS = [
+    "/System/Library/Fonts/PingFang.ttc",
+    "/System/Library/Fonts/STHeiti Medium.ttc",
+    "/System/Library/Fonts/STHeiti Light.ttc",
+    "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+    "/Library/Fonts/Arial Unicode.ttf",
+]
+
+
+def _resolve_font(font_cfg, prefer_cjk=False):
+    font_size = font_cfg["size"]
+    font_path = font_cfg.get("path")
+    if prefer_cjk:
+        for p in CJK_FONT_PATHS:
+            if os.path.exists(p):
+                font_path = p
+                break
+    try:
+        if font_path:
+            return ImageFont.truetype(font_path, font_size)
+    except Exception:
+        pass
+    return ImageFont.load_default(font_size)
 
 RAW_MIRRORS = [
     "https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main",
@@ -22,17 +59,22 @@ def _resolve_template(template_arg):
     if os.path.isfile(template_arg):
         with open(template_arg) as f:
             return yaml.safe_load(f)
-    meme_id = template_arg.replace("_", "-")
+    variants = list({
+        template_arg,
+        template_arg.replace("_", "-"),
+        template_arg.replace("-", "_"),
+    })
     for base in RAW_MIRRORS:
-        url = f"{base}/data/spec/{meme_id}.yml"
-        print(f"Trying: {url}")
-        r = subprocess.run(["curl", "-sL", "--max-time", "8", url],
-                           capture_output=True, text=True, timeout=15)
-        if r.returncode == 0 and r.stdout.strip() and not r.stdout.startswith("Not found"):
-            data = yaml.safe_load(r.stdout)
-            if isinstance(data, dict):
-                return data
-    print(f"Error: template '{meme_id}' not found on any mirror", file=sys.stderr)
+        for name in variants:
+            url = f"{base}/data/spec/{name}.yml"
+            print(f"Trying: {url}")
+            r = subprocess.run(["curl", "-sL", "--max-time", "8", url],
+                               capture_output=True, text=True, timeout=15)
+            if r.returncode == 0 and r.stdout.strip() and not r.stdout.startswith("404") and not r.stdout.startswith("Not found"):
+                data = yaml.safe_load(r.stdout)
+                if isinstance(data, dict):
+                    return data
+    print(f"Error: template '{template_arg}' not found on any mirror", file=sys.stderr)
     sys.exit(1)
 
 
@@ -61,22 +103,18 @@ def render_pillow(template, image_path, texts, layout_id, output):
     draw = ImageDraw.Draw(img)
 
     font_cfg = template["font"]
-    font_size = font_cfg["size"]
-    font_path = font_cfg.get("path")
-    try:
-        font = ImageFont.truetype(font_path, font_size) if font_path else ImageFont.load_default(font_size)
-    except Exception:
-        font = ImageFont.load_default(font_size)
-
     layout = _get_layout(template, layout_id)
     slots = layout["slots"]
 
     for i, slot in enumerate(slots):
         if i >= len(texts):
             break
+        text = texts[i]
+        cjk = _has_cjk(text)
+        font = _resolve_font(font_cfg, prefer_cjk=cjk)
         pos = tuple(slot["pos"])
         draw.text(
-            pos, texts[i], font=font,
+            pos, text, font=font,
             fill=font_cfg.get("color", "white"),
             stroke_width=font_cfg.get("stroke_width", 4),
             stroke_fill=font_cfg.get("stroke_color", "black"),

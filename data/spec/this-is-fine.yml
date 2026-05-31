@@ -1,5 +1,5 @@
 id: this-is-fine
-image_size: [280, 133]
+image_size: [600, 286]
 urls:
   - src: wikipedia
     url: https://upload.wikimedia.org/wikipedia/en/c/cb/This_is_fine_from_On_Fire_strip_by_KC_Green.jpg
@@ -7,10 +7,10 @@ urls:
     url: https://i.imgflip.com/1d6t4m.jpg
 font:
   family: Impact
-  size: 24
+  size: 40
   color: white
   stroke_color: black
-  stroke_width: 2
+  stroke_width: 3
   anchor: mm
 layouts:
   - id: top-bottom
@@ -20,10 +20,10 @@ layouts:
       - id: top
         role: "setup / situation"
         role_zh: "铺垫/场景"
-        pos: [140, 15]
+        pos: [300, 35]
       - id: bottom
         role: "punchline / denial"
         role_zh: "点睛/否认"
-        pos: [140, 118]
+        pos: [300, 256]
 example:
   texts: ["ERROR LOG", "THIS IS FINE"]
