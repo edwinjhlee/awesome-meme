@@ -23,7 +23,7 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 
 ```bash
 # 1. 获取渲染器
-curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
+curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/scripts/meme_render.py
 
 # 2. 安装依赖
 pip install pillow pyyaml

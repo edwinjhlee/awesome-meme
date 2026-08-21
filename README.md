@@ -9,7 +9,7 @@ AI agents can generate text, but they can't *meme*. awesome-meme gives any AI ag
 **One line to meme:**
 
 ```bash
-python3 meme_render.py distracted-boyfriend ZIG ME RUST
+python3 meme_render.py distracted-boyfriend ZIG ME RUST  # from skill/scripts/
 ```
 
 ## What's inside
@@ -23,13 +23,13 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 
 ```bash
 # 1. Get the skill
-curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
+curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/scripts/meme_render.py
 
 # 2. Install dependencies
 pip install pillow pyyaml
 
 # 3. Generate a meme (auto-downloads spec + image from GitHub)
-python3 meme_render.py this-is-fine "ERROR LOG" "THIS IS FINE"
+python3 meme_render.py this-is-fine "ERROR LOG" "THIS IS FINE"  # auto-downloads spec + image
 ```
 
 Or with x-cmd:

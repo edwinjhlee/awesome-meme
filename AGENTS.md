@@ -21,11 +21,14 @@ awesome-meme/
 │   └── spec/                   # Per-meme render specs
 ├── skill/                      # Self-contained renderer (stable, no data)
 │   ├── SKILL.md                # Entry point — usage, download, docs
-│   ├── meme_render.py          # Python renderer (Pillow + ImageMagick)
-│   ├── meme_render.sh          # Shell renderer (ImageMagick only)
-│   ├── INSTALL.md              # Dependency installation
-│   ├── PILLOW.md               # Pillow backend guide
-│   └── IMAGE_MAGICK.md         # ImageMagick backend guide
+│   ├── scripts/                # Executable code
+│   │   ├── meme_render.py      # Python renderer (Pillow + ImageMagick)
+│   │   └── meme_render.sh      # Shell renderer (ImageMagick only)
+│   └── references/             # Documentation
+│       ├── INSTALL.md          # Dependency installation
+│       ├── PILLOW.md           # Pillow backend guide
+│       ├── IMAGE_MAGICK.md     # ImageMagick backend guide
+│       └── GUIDELINES.md       # AI agent usage guidelines
 ├── .x-cmd/rule/                # Quality rules for skill/
 └── README.md
 ```
@@ -48,13 +51,13 @@ awesome-meme/
 
 1. **Text meme**: add to `data/text/{lang}/{current_year}.yml` with id, name, meaning, output
 2. **Image/celebrity meme**: add to `data/index.yml` and create `data/spec/<meme_id>.yml`
-3. Test with `python3 skill/meme_render.py <meme-id> TEXT1 TEXT2`
+3. Test with `python3 skill/scripts/meme_render.py <meme-id> TEXT1 TEXT2`
 
 ## When Modifying the Skill
 
 1. Run `x rule scan skill/` to check quality
 2. Ensure both Pillow and ImageMagick backends still work
-3. Keep SKILL.md concise — detailed docs go in INSTALL.md / PILLOW.md / IMAGE_MAGICK.md
+3. Keep SKILL.md concise — detailed docs go in references/INSTALL.md / references/PILLOW.md / references/IMAGE_MAGICK.md
 
 ## Quality Rules
 

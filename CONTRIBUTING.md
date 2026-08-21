@@ -88,7 +88,7 @@ example:
 
 ```bash
 # Test locally (renderer auto-fetches spec + image)
-python3 skill/meme_render.py your-meme-id "TEXT1" "TEXT2"
+python3 skill/scripts/meme_render.py your-meme-id "TEXT1" "TEXT2"
 
 # Verify the output looks good, then submit a PR
 ```
@@ -114,7 +114,7 @@ bash .x-cmd/yml2tsv
 - [ ] `data/spec/your_meme_id.yml` created with valid YAML (underscores in filename)
 - [ ] `data/index.tsv` regenerated via `.x-cmd/yml2tsv`
 - [ ] `example.texts` produces a funny/relevant test meme
-- [ ] Tested with `python3 skill/meme_render.py <meme-id> ...`
+- [ ] Tested with `python3 skill/scripts/meme_render.py <meme-id> ...`
 - [ ] No images committed to repo
 
 ## Reporting Issues

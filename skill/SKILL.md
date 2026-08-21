@@ -17,12 +17,12 @@ metadata:
 
 Generate meme images by overlaying text onto templates from [awesome-meme](https://github.com/edwinjhlee/awesome-meme). Pass a meme ID and the renderer fetches the spec YAML from GitHub automatically.
 
-## Not installed? → [INSTALL.md](INSTALL.md)
+## Not installed? → [INSTALL.md](references/INSTALL.md)
 
 ## Quick Start
 
 ```bash
-python3 meme_render.py distracted-boyfriend ZIG ME RUST
+python3 scripts/meme_render.py distracted-boyfriend ZIG ME RUST
 ```
 
 ## Options
@@ -53,26 +53,26 @@ python3 meme_render.py distracted-boyfriend ZIG ME RUST
 
 ## Backends
 
-**Pillow** (default) — precise center-anchor coordinates → [PILLOW.md](PILLOW.md)
-**ImageMagick** — no Python needed → [IMAGE_MAGICK.md](IMAGE_MAGICK.md)
+**Pillow** (default) — precise center-anchor coordinates → [PILLOW.md](references/PILLOW.md)
+**ImageMagick** — no Python needed → [IMAGE_MAGICK.md](references/IMAGE_MAGICK.md)
 
 ```bash
-python3 meme_render.py distracted-boyfriend ZIG ME RUST --backend magick
+python3 scripts/meme_render.py distracted-boyfriend ZIG ME RUST --backend magick
 # Or pure shell (also supports meme IDs):
-bash meme_render.sh distracted-boyfriend "ZIG" "ME" "RUST"
+bash scripts/meme_render.sh distracted-boyfriend "ZIG" "ME" "RUST"
 ```
 
 ## Get the skill
 
 ```bash
 git clone https://github.com/edwinjhlee/awesome-meme.git && cd awesome-meme/skill
-# Or: curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/meme_render.py
+# Or: curl -O https://raw.githubusercontent.com/edwinjhlee/awesome-meme/main/skill/scripts/meme_render.py
 # Or via x-cmd: eval "$(curl https://get.x-cmd.com)"
 ```
 
 ## Docs
 
-- [INSTALL.md](INSTALL.md) — Dependencies (Pillow, ImageMagick, fonts)
-- [PILLOW.md](PILLOW.md) — Pillow backend: coordinates, programmatic usage
-- [IMAGE_MAGICK.md](IMAGE_MAGICK.md) — ImageMagick backend: commands, coordinates
-- [GUIDELINES.md](GUIDELINES.md) — AI agent usage, font selection, data structure
+- [references/INSTALL.md](references/INSTALL.md) — Dependencies (Pillow, ImageMagick, fonts)
+- [references/PILLOW.md](references/PILLOW.md) — Pillow backend: coordinates, programmatic usage
+- [references/IMAGE_MAGICK.md](references/IMAGE_MAGICK.md) — ImageMagick backend: commands, coordinates
+- [references/GUIDELINES.md](references/GUIDELINES.md) — AI agent usage, font selection, data structure
